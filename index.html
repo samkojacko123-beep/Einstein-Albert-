@@ -336,26 +336,23 @@ section{
     50%{transform:translateX(-50%) translateY(8px);}
 }
 
-/* MEGA LIFE SECTION */
+/* ===== ULTRA PREMIUM HORIZONTAL LIFE TIMELINE ===== */
 .life-section{
     position:relative;
-    padding:160px 8%;
+    padding:180px 8%;
     z-index:2;
 }
-
 .section-divider{
     width:100%;
     height:2px;
     margin-bottom:90px;
-    background:linear-gradient(90deg, transparent, rgba(96,165,250,.45), transparent);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(96,165,250,.45),
+        transparent
+    );
 }
-
-.section-header{
-    text-align:center;
-    max-width:900px;
-    margin:0 auto 90px;
-}
-
 .section-badge{
     display:inline-block;
     padding:10px 18px;
@@ -366,6 +363,11 @@ section{
     font-weight:700;
     margin-bottom:22px;
     backdrop-filter:blur(12px);
+}
+.section-header{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 90px;
 }
 
 .section-header h2{
@@ -379,109 +381,153 @@ section{
     line-height:1.9;
     color:#475569;
 }
-
-.life-grid{
-    display:grid;
-    grid-template-columns:1.3fr .7fr;
-    gap:40px;
-    align-items:start;
+.timeline-wrapper{
+    position:relative;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:80px 0 50px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    cursor:grab;
+    scroll-behavior:smooth;
 }
 
-.timeline{
+.timeline-wrapper::-webkit-scrollbar{
+    display:none;
+}
+
+.timeline-progress-line{
+    position:absolute;
+    top:115px;
+    left:0;
+    width:calc(100% - 40px);
+    min-width:2600px;
+    height:4px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8,#60a5fa);
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(37,99,235,.2);
+}
+
+.timeline-horizontal{
     position:relative;
     display:flex;
-    flex-direction:column;
-    gap:28px;
+    gap:50px;
+    width:max-content;
+    padding:0 20px;
 }
 
-.timeline::before{
-    content:"";
-    position:absolute;
-    left:-20px;
-    top:0;
-    width:3px;
-    height:100%;
-    background:linear-gradient(#2563eb,#38bdf8);
-    border-radius:20px;
-}
-
-.timeline-card{
+.timeline-event{
     position:relative;
-    padding:35px;
-    border-radius:28px;
-    background:rgba(255,255,255,.72);
-    border:1px solid rgba(255,255,255,.75);
-    backdrop-filter:blur(16px);
-    box-shadow:0 18px 45px rgba(0,0,0,.06);
+    width:380px;
+    flex-shrink:0;
+    scroll-snap-align:center;
+}
+
+.timeline-event.featured .event-card{
+    min-height:300px;
+    border:1px solid rgba(96,165,250,.35);
+    box-shadow:0 20px 60px rgba(37,99,235,.12);
+}
+
+.year-bubble{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:30px;
+    box-shadow:
+        0 0 0 10px rgba(37,99,235,.08),
+        0 10px 30px rgba(37,99,235,.25);
+    position:relative;
+    z-index:2;
     transition:.35s;
 }
 
-.timeline-card::before{
+.timeline-event:hover .year-bubble{
+    transform:scale(1.08);
+    box-shadow:
+        0 0 0 14px rgba(37,99,235,.12),
+        0 14px 40px rgba(37,99,235,.3);
+}
+
+.event-card{
+    padding:34px;
+    min-height:280px;
+    border-radius:32px;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(255,255,255,.8);
+    backdrop-filter:blur(18px);
+    box-shadow:0 18px 45px rgba(0,0,0,.06);
+    transition:all .35s ease;
+    position:relative;
+}
+
+.event-card::before{
     content:"";
     position:absolute;
-    width:16px;
-    height:16px;
-    border-radius:50%;
-    background:#2563eb;
-    left:-28px;
-    top:40px;
-    box-shadow:0 0 0 8px rgba(37,99,235,.12);
+    inset:0;
+    border-radius:32px;
+    padding:1px;
+    background:linear-gradient(135deg, rgba(96,165,250,.3), transparent);
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
 }
 
-.timeline-card:hover{
-    transform:translateX(10px);
-    box-shadow:0 22px 60px rgba(37,99,235,.12);
+.timeline-event:hover .event-card{
+    transform:translateY(-12px);
+    box-shadow:0 28px 70px rgba(37,99,235,.14);
 }
 
-.timeline-card span{
-    font-size:1rem;
-    font-weight:800;
-    color:#2563eb;
-}
-
-.timeline-card h3{
-    font-size:1.6rem;
-    margin:14px 0;
-}
-
-.timeline-card p{
-    line-height:1.9;
-    color:#475569;
-}
-
-.life-side{
-    display:flex;
-    flex-direction:column;
-    gap:30px;
-}
-
-.life-highlight,
-.life-quote-box{
-    padding:35px;
-    border-radius:28px;
-    background:rgba(255,255,255,.72);
-    border:1px solid rgba(255,255,255,.75);
-    backdrop-filter:blur(16px);
-    box-shadow:0 18px 45px rgba(0,0,0,.06);
-}
-
-.life-highlight h3{
-    font-size:1.6rem;
+.event-card h3{
+    font-size:1.7rem;
     margin-bottom:18px;
+    color:#0f172a;
 }
 
-.life-highlight p,
-.life-quote-box p{
+.event-card p{
+    font-size:1rem;
     line-height:1.9;
     color:#475569;
+    margin-bottom:28px;
 }
 
-.life-quote-box{
-    background:linear-gradient(135deg, rgba(219,234,254,.8), rgba(255,255,255,.8));
-    font-style:italic;
-    font-size:1.05rem;
+.event-tag{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:999px;
+    background:rgba(219,234,254,.9);
+    color:#2563eb;
+    font-weight:700;
+    font-size:.9rem;
 }
 
+/* mobile */
+@media(max-width:900px){
+    .life-section{
+        padding:120px 6%;
+    }
+
+    .timeline-event{
+        width:300px;
+    }
+
+    .year-bubble{
+        width:72px;
+        height:72px;
+        font-size:.95rem;
+    }
+
+    .event-card{
+        min-height:250px;
+        padding:26px;
+    }
+}
 @media(max-width:1000px){
     .life-grid{
         grid-template-columns:1fr;
@@ -598,71 +644,105 @@ section{
     <div class="section-divider"></div>
 
     <div class="section-header">
-        <span class="section-badge">🕰️ Život</span>
+        <span class="section-badge">🕰️ Interaktívna časová os</span>
         <h2>Život Alberta Einsteina</h2>
         <p>
-            Einsteinov život bol cestou génia, ktorý od detstva prejavoval
-            mimoriadnu zvedavosť. Od prvých otázok o priestore a čase až po
-            revolučné teórie relativity zmenil spôsob, akým ľudstvo chápe vesmír.
+            Objav fascinujúcu cestu génia cez najdôležitejšie momenty jeho života.
+            Posúvaj sa vodorovne a sleduj, ako sa rodili myšlienky,
+            ktoré navždy zmenili vedu.
         </p>
     </div>
 
-    <div class="life-grid">
-        <div class="timeline">
-            <div class="timeline-card">
-                <span>1879</span>
-                <h3>Narodenie</h3>
-                <p>
-                    Albert Einstein sa narodil 14. marca 1879 v Ulme.
-                    Už v mladosti prejavoval fascináciu matematikou,
-                    fyzikou a prírodnými javmi.
-                </p>
-            </div>
+    <div class="timeline-wrapper">
+        <div class="timeline-progress-line"></div>
 
-            <div class="timeline-card">
-                <span>1896</span>
-                <h3>Štúdium v Zürichu</h3>
-                <p>
-                    Nastúpil na ETH Zürich, kde rozvíjal svoje myslenie,
-                    ktoré neskôr položilo základy modernej fyziky.
-                </p>
-            </div>
+        <div class="timeline-horizontal">
 
-            <div class="timeline-card">
-                <span>1905</span>
-                <h3>Zázračný rok</h3>
-                <p>
-                    V roku 1905 publikoval práce o fotoelektrickom jave,
-                    Brownovom pohybe a špeciálnej teórii relativity.
-                </p>
-            </div>
+            <article class="timeline-event featured">
+                <div class="year-bubble">1879</div>
+                <div class="event-card">
+                    <h3>Narodenie v Ulme</h3>
+                    <p>
+                        Albert Einstein sa narodil 14. marca 1879 v nemeckom Ulme.
+                        Už od detstva prejavoval výnimočný záujem o matematiku,
+                        kompas a záhady prírody.
+                    </p>
+                    <div class="event-tag">Začiatok génia</div>
+                </div>
+            </article>
 
-            <div class="timeline-card">
-                <span>1955</span>
-                <h3>Odkaz</h3>
-                <p>
-                    Jeho dielo ostáva základom modernej fyziky a jeho meno
-                    sa stalo synonymom geniality.
-                </p>
-            </div>
-        </div>
+            <article class="timeline-event">
+                <div class="year-bubble">1896</div>
+                <div class="event-card">
+                    <h3>ETH Zürich</h3>
+                    <p>
+                        Nastúpil na ETH Zürich, kde začal budovať základy svojho
+                        vedeckého myslenia a spoznal Milevu Marić.
+                    </p>
+                    <div class="event-tag">Štúdium</div>
+                </div>
+            </article>
 
-        <div class="life-side">
-            <div class="life-highlight">
-                <h3>🌍 Cesta génia</h3>
-                <p>
-                    Einstein nebol len vedec. Bol filozofom myslenia,
-                    ktorý spochybňoval zaužívané predstavy o realite.
-                    Jeho životný príbeh je príbehom odvahy myslieť inak.
-                </p>
-            </div>
+            <article class="timeline-event featured">
+                <div class="year-bubble">1905</div>
+                <div class="event-card">
+                    <h3>Zázračný rok</h3>
+                    <p>
+                        Publikoval práce o fotoelektrickom jave, Brownovom pohybe,
+                        špeciálnej teórii relativity a slávnej rovnici E = mc².
+                    </p>
+                    <div class="event-tag">Annus Mirabilis</div>
+                </div>
+            </article>
 
-            <div class="life-quote-box">
-                <p>
-                    „Život je ako jazda na bicykli.
-                    Aby si udržal rovnováhu, musíš sa hýbať.“
-                </p>
-            </div>
+            <article class="timeline-event">
+                <div class="year-bubble">1915</div>
+                <div class="event-card">
+                    <h3>Všeobecná relativita</h3>
+                    <p>
+                        Predstavil revolučný pohľad na gravitáciu a zakrivenie
+                        časopriestoru, čím úplne prepísal fyziku.
+                    </p>
+                    <div class="event-tag">Revolúcia</div>
+                </div>
+            </article>
+
+            <article class="timeline-event featured">
+                <div class="year-bubble">1921</div>
+                <div class="event-card">
+                    <h3>Nobelova cena</h3>
+                    <p>
+                        Získal Nobelovu cenu za vysvetlenie fotoelektrického javu,
+                        ktorý položil základy kvantovej fyziky.
+                    </p>
+                    <div class="event-tag">Ocenenie</div>
+                </div>
+            </article>
+
+            <article class="timeline-event">
+                <div class="year-bubble">1933</div>
+                <div class="event-card">
+                    <h3>Princeton</h3>
+                    <p>
+                        Presťahoval sa do USA, kde pokračoval vo výskume
+                        a stal sa svetovým symbolom geniality.
+                    </p>
+                    <div class="event-tag">USA</div>
+                </div>
+            </article>
+
+            <article class="timeline-event featured">
+                <div class="year-bubble">1955</div>
+                <div class="event-card">
+                    <h3>Vedecký odkaz</h3>
+                    <p>
+                        Einstein zomrel v Princetone, no jeho teórie dodnes
+                        ovplyvňujú fyziku, vesmírny výskum aj technológie.
+                    </p>
+                    <div class="event-tag">Legenda</div>
+                </div>
+            </article>
+
         </div>
     </div>
 </section>
@@ -675,5 +755,51 @@ section{
 <section id="zaver" style="height:100vh;"></section>
 
 <div class="scroll">↓ scroll</div>
+
+<script>
+const slider = document.querySelector('.timeline-wrapper');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.style.cursor = 'grabbing';
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.style.cursor = 'grab';
+});
+
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.style.cursor = 'grab';
+});
+
+slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.6;
+    slider.scrollLeft = scrollLeft - walk;
+});
+let touchStartX = 0;
+let touchScrollLeft = 0;
+
+slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].pageX;
+    touchScrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].pageX;
+    const walk = (touchX - touchStartX) * 1.4;
+    slider.scrollLeft = touchScrollLeft - walk;
+});
+</script>
 </body>
 </html>
