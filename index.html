@@ -278,7 +278,7 @@ section{
     position:absolute;
     width:650px;
     height:650px;
-    border:3px dashed rgba(96,165,250,0.22);
+    border:3px dashed rgba(15,23,42,0.28);
     border-radius:50%;
     top:50%;
     left:50%;
@@ -291,7 +291,7 @@ section{
     content:"";
     position:absolute;
     inset:40px;
-    border:2px dashed rgba(96,165,250,0.14);
+    border:2px dashed rgba(15,23,42,0.18);
     border-radius:50%;
 }
 
@@ -299,7 +299,7 @@ section{
     content:"";
     position:absolute;
     inset:90px;
-    border:2px solid rgba(147,197,253,0.08);
+    border:2px solid rgba(15,23,42,0.12);
     border-radius:50%;
 }
 
@@ -391,7 +391,10 @@ section{
     cursor:grab;
     scroll-behavior:smooth;
 }
-
+.timeline-wrapper.dragging{
+    cursor:grabbing;
+    user-select:none;
+}
 .timeline-wrapper::-webkit-scrollbar{
     display:none;
 }
@@ -506,7 +509,79 @@ section{
     font-weight:700;
     font-size:.9rem;
 }
+.timeline-controls{
+    display:flex;
+    justify-content:flex-end;
+    gap:14px;
+    margin-bottom:25px;
+}
 
+.timeline-btn{
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(14px);
+    box-shadow:0 10px 30px rgba(37,99,235,.14);
+    color:#2563eb;
+    font-size:1.6rem;
+    font-weight:800;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.timeline-btn:hover{
+    transform:translateY(-4px) scale(1.05);
+    background:white;
+}
+
+/* background moving gears */
+.bg-gear{
+    position:fixed;
+    border:3px dashed rgba(15,23,42,.22);
+    border-radius:50%;
+    z-index:0;
+    animation:spinGear 40s linear infinite;
+}
+
+.gear-small{
+    width:120px;
+    height:120px;
+    top:18%;
+    left:6%;
+}
+
+.gear-medium{
+    width:180px;
+    height:180px;
+    top:70%;
+    left:12%;
+    animation-duration:60s;
+    animation-direction:reverse;
+}
+
+.gear-large{
+    width:260px;
+    height:260px;
+    top:25%;
+    right:10%;
+    animation-duration:80s;
+}
+
+.gear-xlarge{
+    width:340px;
+    height:340px;
+    bottom:8%;
+    right:5%;
+    animation-duration:100s;
+    animation-direction:reverse;
+}
+
+@keyframes spinGear{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
 /* mobile */
 @media(max-width:900px){
     .life-section{
@@ -575,6 +650,10 @@ section{
 <div class="glow1"></div>
 <div class="glow2"></div>
 <div class="glow3"></div>
+<div class="bg-gear gear-small"></div>
+<div class="bg-gear gear-medium"></div>
+<div class="bg-gear gear-large"></div>
+<div class="bg-gear gear-xlarge"></div>
 
 <nav class="nav">
     <div class="logo">Albert Einstein</div>
@@ -652,7 +731,10 @@ section{
             ktoré navždy zmenili vedu.
         </p>
     </div>
-
+<div class="timeline-controls">
+    <button class="timeline-btn left">←</button>
+    <button class="timeline-btn right">→</button>
+</div>
     <div class="timeline-wrapper">
         <div class="timeline-progress-line"></div>
 
@@ -765,21 +847,16 @@ let scrollLeft;
 
 slider.addEventListener('mousedown', (e) => {
     isDown = true;
-    slider.style.cursor = 'grabbing';
+    slider.classList.add('dragging');
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
 });
 
-slider.addEventListener('mouseleave', () => {
+document.addEventListener('mouseup', () => {
     isDown = false;
+    slider.classList.remove('dragging');
     slider.style.cursor = 'grab';
 });
-
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.style.cursor = 'grab';
-});
-
 slider.addEventListener('mousemove', (e) => {
     if(!isDown) return;
     e.preventDefault();
@@ -799,6 +876,23 @@ slider.addEventListener('touchmove', (e) => {
     const touchX = e.touches[0].pageX;
     const walk = (touchX - touchStartX) * 1.4;
     slider.scrollLeft = touchScrollLeft - walk;
+});
+
+const leftBtn = document.querySelector('.timeline-btn.left');
+const rightBtn = document.querySelector('.timeline-btn.right');
+
+leftBtn.addEventListener('click', () => {
+    slider.scrollBy({
+        left: -430,
+        behavior: 'smooth'
+    });
+});
+
+rightBtn.addEventListener('click', () => {
+    slider.scrollBy({
+        left: 430,
+        behavior: 'smooth'
+    });
 });
 </script>
 </body>
