@@ -24,7 +24,9 @@ body{
     overflow-x:hidden;
     position:relative;
 }
-
+section{
+    scroll-margin-top:120px;
+}
 /* particles */
 .particles{
     position:fixed;
@@ -218,6 +220,8 @@ body{
     position:relative;
     display:flex;
     justify-content:center;
+    align-items:center;
+    min-height:700px;
 }
 
 .image-frame{
@@ -269,6 +273,52 @@ body{
 .p2{top:180px; left:-60px;}
 .p3{bottom:120px; right:-40px;}
 
+/* large moving science wheel */
+.big-gear{
+    position:absolute;
+    width:650px;
+    height:650px;
+    border:3px dashed rgba(96,165,250,0.22);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:1;
+    animation:rotateGear 35s linear infinite;
+}
+
+.big-gear::before{
+    content:"";
+    position:absolute;
+    inset:40px;
+    border:2px dashed rgba(96,165,250,0.14);
+    border-radius:50%;
+}
+
+.big-gear::after{
+    content:"";
+    position:absolute;
+    inset:90px;
+    border:2px solid rgba(147,197,253,0.08);
+    border-radius:50%;
+}
+
+.gear-2{
+    width:780px;
+    height:780px;
+    animation-direction:reverse;
+    animation-duration:50s;
+    opacity:.7;
+}
+
+@keyframes rotateGear{
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
 /* scroll */
 .scroll{
     position:absolute;
@@ -286,6 +336,166 @@ body{
     50%{transform:translateX(-50%) translateY(8px);}
 }
 
+/* MEGA LIFE SECTION */
+.life-section{
+    position:relative;
+    padding:160px 8%;
+    z-index:2;
+}
+
+.section-divider{
+    width:100%;
+    height:2px;
+    margin-bottom:90px;
+    background:linear-gradient(90deg, transparent, rgba(96,165,250,.45), transparent);
+}
+
+.section-header{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 90px;
+}
+
+.section-badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(255,255,255,.75);
+    border:1px solid rgba(255,255,255,.7);
+    color:#2563eb;
+    font-weight:700;
+    margin-bottom:22px;
+    backdrop-filter:blur(12px);
+}
+
+.section-header h2{
+    font-size:4rem;
+    margin-bottom:24px;
+    letter-spacing:-2px;
+}
+
+.section-header p{
+    font-size:1.15rem;
+    line-height:1.9;
+    color:#475569;
+}
+
+.life-grid{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:40px;
+    align-items:start;
+}
+
+.timeline{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:-20px;
+    top:0;
+    width:3px;
+    height:100%;
+    background:linear-gradient(#2563eb,#38bdf8);
+    border-radius:20px;
+}
+
+.timeline-card{
+    position:relative;
+    padding:35px;
+    border-radius:28px;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(255,255,255,.75);
+    backdrop-filter:blur(16px);
+    box-shadow:0 18px 45px rgba(0,0,0,.06);
+    transition:.35s;
+}
+
+.timeline-card::before{
+    content:"";
+    position:absolute;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#2563eb;
+    left:-28px;
+    top:40px;
+    box-shadow:0 0 0 8px rgba(37,99,235,.12);
+}
+
+.timeline-card:hover{
+    transform:translateX(10px);
+    box-shadow:0 22px 60px rgba(37,99,235,.12);
+}
+
+.timeline-card span{
+    font-size:1rem;
+    font-weight:800;
+    color:#2563eb;
+}
+
+.timeline-card h3{
+    font-size:1.6rem;
+    margin:14px 0;
+}
+
+.timeline-card p{
+    line-height:1.9;
+    color:#475569;
+}
+
+.life-side{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.life-highlight,
+.life-quote-box{
+    padding:35px;
+    border-radius:28px;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(255,255,255,.75);
+    backdrop-filter:blur(16px);
+    box-shadow:0 18px 45px rgba(0,0,0,.06);
+}
+
+.life-highlight h3{
+    font-size:1.6rem;
+    margin-bottom:18px;
+}
+
+.life-highlight p,
+.life-quote-box p{
+    line-height:1.9;
+    color:#475569;
+}
+
+.life-quote-box{
+    background:linear-gradient(135deg, rgba(219,234,254,.8), rgba(255,255,255,.8));
+    font-style:italic;
+    font-size:1.05rem;
+}
+
+@media(max-width:1000px){
+    .life-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-header h2{
+        font-size:2.8rem;
+    }
+
+    .timeline::before,
+    .timeline-card::before{
+        display:none;
+    }
+}
 @media(max-width:1100px){
     .hero{
         grid-template-columns:1fr;
@@ -337,7 +547,7 @@ body{
 
 <section id="domov" class="hero">
     <div class="hero-text">
-        <div class="badge">✨ Génius, ktorý navždy zmenil fyziku</div>
+        <div class="badge"> Génius, ktorý navždy zmenil fyziku</div>
         <h1>Albert<br>Einstein</h1>
         <p>
             Prémiová moderná webstránka venovaná najväčšiemu géniovi histórie.
@@ -367,9 +577,11 @@ body{
     </div>
 
     <div class="hero-image">
-        <div class="pill p1">⚛ Relativita</div>
-        <div class="pill p2">🧠 Genius</div>
-        <div class="pill p3">🌌 Space-Time</div>
+        <div class="big-gear"></div>
+        <div class="big-gear gear-2"></div>
+        <div class="pill p1"> Relativita</div>
+        <div class="pill p2"> Genius</div>
+        <div class="pill p3"> Space-Time</div>
 
         <div class="image-frame">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg" alt="Albert Einstein">
@@ -382,7 +594,78 @@ body{
 </section>
 
 
-<section id="zivot" style="height:100vh;"></section>
+<section id="zivot" class="life-section">
+    <div class="section-divider"></div>
+
+    <div class="section-header">
+        <span class="section-badge">🕰️ Život</span>
+        <h2>Život Alberta Einsteina</h2>
+        <p>
+            Einsteinov život bol cestou génia, ktorý od detstva prejavoval
+            mimoriadnu zvedavosť. Od prvých otázok o priestore a čase až po
+            revolučné teórie relativity zmenil spôsob, akým ľudstvo chápe vesmír.
+        </p>
+    </div>
+
+    <div class="life-grid">
+        <div class="timeline">
+            <div class="timeline-card">
+                <span>1879</span>
+                <h3>Narodenie</h3>
+                <p>
+                    Albert Einstein sa narodil 14. marca 1879 v Ulme.
+                    Už v mladosti prejavoval fascináciu matematikou,
+                    fyzikou a prírodnými javmi.
+                </p>
+            </div>
+
+            <div class="timeline-card">
+                <span>1896</span>
+                <h3>Štúdium v Zürichu</h3>
+                <p>
+                    Nastúpil na ETH Zürich, kde rozvíjal svoje myslenie,
+                    ktoré neskôr položilo základy modernej fyziky.
+                </p>
+            </div>
+
+            <div class="timeline-card">
+                <span>1905</span>
+                <h3>Zázračný rok</h3>
+                <p>
+                    V roku 1905 publikoval práce o fotoelektrickom jave,
+                    Brownovom pohybe a špeciálnej teórii relativity.
+                </p>
+            </div>
+
+            <div class="timeline-card">
+                <span>1955</span>
+                <h3>Odkaz</h3>
+                <p>
+                    Jeho dielo ostáva základom modernej fyziky a jeho meno
+                    sa stalo synonymom geniality.
+                </p>
+            </div>
+        </div>
+
+        <div class="life-side">
+            <div class="life-highlight">
+                <h3>🌍 Cesta génia</h3>
+                <p>
+                    Einstein nebol len vedec. Bol filozofom myslenia,
+                    ktorý spochybňoval zaužívané predstavy o realite.
+                    Jeho životný príbeh je príbehom odvahy myslieť inak.
+                </p>
+            </div>
+
+            <div class="life-quote-box">
+                <p>
+                    „Život je ako jazda na bicykli.
+                    Aby si udržal rovnováhu, musíš sa hýbať.“
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="kariera" style="height:100vh;"></section>
 <section id="fotoelektricky" style="height:100vh;"></section>
 <section id="ocenenia" style="height:100vh;"></section>
