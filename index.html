@@ -32,7 +32,7 @@ body{
     background-image:
         radial-gradient(circle, rgba(37,99,235,.18) 1px, transparent 1px),
         radial-gradient(circle, rgba(168,85,247,.14) 1px, transparent 1px);
-    background-size:80px 80px, 120px 120px;
+    background-size:100px 100px, 140px 140px;
     animation:particlesMove 30s linear infinite;
     z-index:0;
 }
@@ -232,7 +232,7 @@ body{
 }
 
 .hero-image img{
-    width:470px;
+    width:min(470px, 100%);
     border-radius:28px;
     display:block;
 }
@@ -323,14 +323,19 @@ body{
 <nav class="nav">
     <div class="logo">Albert Einstein</div>
     <div class="nav-links">
-        <a href="#">Domov</a>
-        <a href="#">Život</a>
-        <a href="#">Teórie</a>
-        <a href="#">Citáty</a>
+        <a href="#domov">Domov</a>
+        <a href="#zivot">Život</a>
+        <a href="#kariera">Kariéra</a>
+        <a href="#fotoelektricky">Fotoelektrický jav</a>
+        <a href="#ocenenia">Ocenenia</a>
+        <a href="#zaujimavosti">Zaujímavosti</a>
+        <a href="#fotogaleria">Fotogaléria</a>
+        <a href="#test">Test</a>
+        <a href="#zaver">Záver</a>
     </div>
 </nav>
 
-<section class="hero">
+<section id="domov" class="hero">
     <div class="hero-text">
         <div class="badge">✨ Génius, ktorý navždy zmenil fyziku</div>
         <h1>Albert<br>Einstein</h1>
@@ -341,8 +346,8 @@ body{
         </p>
 
         <div class="buttons">
-            <a href="#" class="btn btn-primary">Preskúmať viac</a>
-            <a href="#" class="btn btn-secondary">Životopis</a>
+<a href="#zivot" class="btn btn-primary">Preskúmať viac</a>
+<a href="#kariera" class="btn btn-secondary">Životopis</a>
         </div>
 
         <div class="stats">
@@ -376,7 +381,16 @@ body{
     </div>
 </section>
 
-<div class="scroll">↓ scroll</div>
 
+<section id="zivot" style="height:100vh;"></section>
+<section id="kariera" style="height:100vh;"></section>
+<section id="fotoelektricky" style="height:100vh;"></section>
+<section id="ocenenia" style="height:100vh;"></section>
+<section id="zaujimavosti" style="height:100vh;"></section>
+<section id="fotogaleria" style="height:100vh;"></section>
+<section id="test" style="height:100vh;"></section>
+<section id="zaver" style="height:100vh;"></section>
+
+<div class="scroll">↓ scroll</div>
 </body>
 </html>
