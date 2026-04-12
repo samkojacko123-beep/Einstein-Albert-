@@ -24,6 +24,17 @@ body{
     overflow-x:hidden;
     position:relative;
 }
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(15,23,42,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,23,42,.03) 1px, transparent 1px);
+    background-size:80px 80px;
+    z-index:0;
+    pointer-events:none;
+}
 section{
     scroll-margin-top:120px;
 }
@@ -125,6 +136,7 @@ section{
     padding:150px 8% 80px;
     position:relative;
     z-index:2;
+    overflow:hidden;
 }
 
 .hero-text{
@@ -342,6 +354,20 @@ section{
     padding:180px 8%;
     z-index:2;
 }
+.life-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 140px,
+            rgba(37,99,235,.03) 141px
+        );
+    pointer-events:none;
+    z-index:0;
+}
 .section-divider{
     width:100%;
     height:2px;
@@ -536,47 +562,59 @@ section{
     background:white;
 }
 
-/* background moving gears */
-.bg-gear{
-    position:fixed;
-    border:3px dashed rgba(15,23,42,.22);
+/* HERO SECTION GEARS */
+.hero-gear{
+    position:absolute;
+    border:3px dashed rgba(37,99,235,.18);
+    border-radius:50%;
+    z-index:1;
+    pointer-events:none;
+    animation:spinGear 45s linear infinite;
+}
+
+.hero-gear-1{
+    width:160px;
+    height:160px;
+    top:8%;
+    right:6%;
+}
+
+.hero-gear-2{
+    width:280px;
+    height:280px;
+    bottom:8%;
+    left:4%;
+    animation-direction:reverse;
+    animation-duration:70s;
+}
+
+/* LIFE SECTION GEARS */
+.life-gear{
+    position:absolute;
+    border:2px dashed rgba(96,165,250,.16);
     border-radius:50%;
     z-index:0;
-    animation:spinGear 40s linear infinite;
+    pointer-events:none;
+    animation:spinGear 60s linear infinite;
 }
 
-.gear-small{
-    width:120px;
-    height:120px;
-    top:18%;
-    left:6%;
-}
-
-.gear-medium{
+.life-gear-1{
     width:180px;
     height:180px;
-    top:70%;
-    left:12%;
-    animation-duration:60s;
-    animation-direction:reverse;
+    top:100px;
+    left:40px;
 }
 
-.gear-large{
+.life-gear-2{
     width:260px;
     height:260px;
-    top:25%;
-    right:10%;
+    bottom:60px;
+    right:20px;
+    animation-direction:reverse;
     animation-duration:80s;
 }
 
-.gear-xlarge{
-    width:340px;
-    height:340px;
-    bottom:8%;
-    right:5%;
-    animation-duration:100s;
-    animation-direction:reverse;
-}
+
 
 @keyframes spinGear{
     from{transform:rotate(0deg);}
@@ -650,10 +688,7 @@ section{
 <div class="glow1"></div>
 <div class="glow2"></div>
 <div class="glow3"></div>
-<div class="bg-gear gear-small"></div>
-<div class="bg-gear gear-medium"></div>
-<div class="bg-gear gear-large"></div>
-<div class="bg-gear gear-xlarge"></div>
+
 
 <nav class="nav">
     <div class="logo">Albert Einstein</div>
@@ -671,6 +706,8 @@ section{
 </nav>
 
 <section id="domov" class="hero">
+    <div class="hero-gear hero-gear-1"></div>
+<div class="hero-gear hero-gear-2"></div>
     <div class="hero-text">
         <div class="badge"> Génius, ktorý navždy zmenil fyziku</div>
         <h1>Albert<br>Einstein</h1>
@@ -720,6 +757,8 @@ section{
 
 
 <section id="zivot" class="life-section">
+    <div class="life-gear life-gear-1"></div>
+<div class="life-gear life-gear-2"></div>
     <div class="section-divider"></div>
 
     <div class="section-header">
