@@ -783,37 +783,48 @@ section{
 }
 
 .story-life{
-    margin-top:160px;
+    margin-top:140px;
     display:flex;
     flex-direction:column;
-    gap:180px;
+    gap:140px;
 }
 
 .story-block{
     display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:80px;
-    align-items:center;
+    grid-template-columns:minmax(420px, 1fr) minmax(420px, 1fr);
+    gap:60px;
+    align-items:stretch;
     position:relative;
 }
 
 .story-block.reverse .story-img{
     order:2;
 }
+
 .story-block.reverse .story-content{
     order:1;
 }
 
 .story-img{
     position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:560px;
+    padding:28px;
+    border-radius:36px;
+    background:rgba(255,255,255,.58);
+    border:1px solid rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+    box-shadow:0 25px 70px rgba(37,99,235,.10);
+    overflow:hidden;
 }
 
 .story-img::before{
     content:"";
     position:absolute;
-    inset:-20px;
-    border-radius:40px;
-    background:linear-gradient(135deg, rgba(37,99,235,.08), transparent);
+    inset:0;
+    background:radial-gradient(circle at top left, rgba(96,165,250,.12), transparent 60%);
     z-index:0;
 }
 
@@ -821,26 +832,34 @@ section{
     position:relative;
     z-index:2;
     width:100%;
-    height:560px;
-    object-fit:cover;
-    border-radius:36px;
-    box-shadow:0 35px 80px rgba(37,99,235,.18);
+    max-width:100%;
+    max-height:500px;
+    height:auto;
+    object-fit:contain;
+    border-radius:24px;
+    display:block;
+    filter:contrast(1.03) brightness(1.02);
 }
 
 .story-content{
     position:relative;
     z-index:2;
-    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:50px;
     border-radius:36px;
-    background:rgba(255,255,255,.72);
-    border:1px solid rgba(255,255,255,.85);
-    backdrop-filter:blur(18px);
-    box-shadow:0 25px 70px rgba(0,0,0,.07);
-    transition:.4s ease;
+    background:rgba(255,255,255,.84);
+    border:1px solid rgba(255,255,255,.92);
+    backdrop-filter:blur(20px);
+    box-shadow:0 25px 70px rgba(0,0,0,.06);
+    transition:.35s ease;
 }
+
 .story-content:hover{
     transform:translateY(-6px);
     box-shadow:0 35px 90px rgba(37,99,235,.12);
+
 }
 .story-year{
     display:inline-block;
@@ -917,9 +936,13 @@ section{
         font-size:2.4rem;
     }
 
-    .story-img img{
-        height:420px;
-    }
+.story-img img{
+    max-height:420px;
+    height:auto;
+}
+.story-content p{
+    max-width:65ch;
+}
 }
 </style>
 </head>
