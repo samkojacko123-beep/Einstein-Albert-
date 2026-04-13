@@ -1152,7 +1152,8 @@ section{
 /* ===== CAREER SECTION ===== */
 .career-section{
     position:relative;
-    padding:200px 8%;
+    padding:160px 8% 200px;
+    margin-top:-30px;
     overflow:hidden;
     border-top-left-radius:80px;
     border-top-right-radius:80px;
@@ -1308,6 +1309,132 @@ section{
     left:40px;
     animation-direction:reverse;
     animation-duration:80s;
+}
+.career-transition{
+    position:relative;
+    height:280px;
+    overflow:hidden;
+    margin-top:-40px;
+    margin-bottom:-50px;
+    z-index:2;
+
+    background:
+        radial-gradient(circle at 20% 40%, rgba(59,130,246,.14), transparent 30%),
+        radial-gradient(circle at 80% 50%, rgba(168,85,247,.10), transparent 35%),
+        radial-gradient(circle at 50% 60%, rgba(56,189,248,.12), transparent 40%),
+        linear-gradient(
+            180deg,
+            rgba(239,246,255,.65),
+            rgba(255,255,255,1)
+        );
+}
+
+.career-line{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:2px;
+    transform:translateY(-50%);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(37,99,235,.25),
+        rgba(56,189,248,.8),
+        rgba(37,99,235,.25),
+        transparent
+    );
+}
+
+.career-glow{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:600px;
+    height:120px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(
+        ellipse,
+        rgba(56,189,248,.18),
+        transparent 70%
+    );
+    filter:blur(35px);
+}
+
+.career-ring{
+    position:absolute;
+    border:2px dashed rgba(37,99,235,.14);
+    border-radius:50%;
+    animation:spinGear 30s linear infinite;
+}
+
+.ring-1{
+    width:90px;
+    height:90px;
+    left:22%;
+    top:40%;
+}
+
+.ring-2{
+    width:160px;
+    height:160px;
+    left:72%;
+    top:35%;
+    animation-direction:reverse;
+    animation-duration:45s;
+}
+
+.ring-3{
+    width:120px;
+    height:120px;
+    left:50%;
+    bottom:10%;
+    animation-duration:25s;
+}
+
+.career-formula{
+    position:absolute;
+    font-weight:800;
+    color:rgba(37,99,235,.35);
+    text-shadow:0 0 20px rgba(56,189,248,.15);
+    animation:floatFormula 6s ease-in-out infinite;
+}
+
+.cf1{
+    left:14%;
+    top:32%;
+    font-size:2rem;
+}
+
+.cf2{
+    right:18%;
+    top:28%;
+    font-size:1.8rem;
+}
+
+.cf3{
+    left:48%;
+    bottom:18%;
+    font-size:1.4rem;
+}
+.career-section::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 140px,
+            rgba(37,99,235,.03) 141px
+        ),
+        repeating-linear-gradient(
+            180deg,
+            transparent,
+            transparent 120px,
+            rgba(56,189,248,.025) 121px
+        );
 }
 @media(max-width:900px){
     .career-card{
@@ -1699,6 +1826,18 @@ section{
 
 </div>
 </section>
+    <div class="career-transition">
+    <div class="career-line"></div>
+    <div class="career-glow"></div>
+
+    <div class="career-ring ring-1"></div>
+    <div class="career-ring ring-2"></div>
+    <div class="career-ring ring-3"></div>
+
+    <div class="career-formula cf1">E = mc²</div>
+    <div class="career-formula cf2">∇²</div>
+    <div class="career-formula cf3">Δx · Δp</div>
+</div>
 <section id="kariera" class="career-section">
     <div class="career-orbit orbit-a"></div>
 <div class="career-orbit orbit-b"></div>
