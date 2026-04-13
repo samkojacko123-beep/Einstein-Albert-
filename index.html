@@ -333,7 +333,7 @@ section{
 }
 /* scroll */
 .scroll{
-    position:absolute;
+    position:fixed;
     bottom:25px;
     left:50%;
     transform:translateX(-50%);
@@ -781,6 +781,146 @@ section{
     transform:translate(-50%,-50%);
     animation:spinGear 20s linear infinite;
 }
+
+.story-life{
+    margin-top:160px;
+    display:flex;
+    flex-direction:column;
+    gap:180px;
+}
+
+.story-block{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:80px;
+    align-items:center;
+    position:relative;
+}
+
+.story-block.reverse .story-img{
+    order:2;
+}
+.story-block.reverse .story-content{
+    order:1;
+}
+
+.story-img{
+    position:relative;
+}
+
+.story-img::before{
+    content:"";
+    position:absolute;
+    inset:-20px;
+    border-radius:40px;
+    background:linear-gradient(135deg, rgba(37,99,235,.08), transparent);
+    z-index:0;
+}
+
+.story-img img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:560px;
+    object-fit:cover;
+    border-radius:36px;
+    box-shadow:0 35px 80px rgba(37,99,235,.18);
+}
+
+.story-content{
+    position:relative;
+    z-index:2;
+    padding:60px;
+    border-radius:36px;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(255,255,255,.85);
+    backdrop-filter:blur(18px);
+    box-shadow:0 25px 70px rgba(0,0,0,.07);
+    transition:.4s ease;
+}
+.story-content:hover{
+    transform:translateY(-6px);
+    box-shadow:0 35px 90px rgba(37,99,235,.12);
+}
+.story-year{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(219,234,254,.8);
+    color:#2563eb;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.story-content h2{
+    font-size:3.2rem;
+    line-height:1.1;
+    margin-bottom:25px;
+    letter-spacing:-1px;
+}
+
+.story-content p{
+    font-size:1.1rem;
+    line-height:2.2;
+    color:#475569;
+    margin-bottom:26px;
+    text-align:justify;
+}
+
+.story-quote{
+    margin-top:30px;
+    padding:24px;
+    border-left:4px solid #2563eb;
+    background:rgba(219,234,254,.35);
+    border-radius:18px;
+    font-style:italic;
+    color:#334155;
+    line-height:1.9;
+}
+
+.story-facts{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:30px;
+}
+
+.fact-box{
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,.75);
+    border:1px solid rgba(255,255,255,.8);
+    box-shadow:0 10px 30px rgba(37,99,235,.08);
+}
+
+.fact-box h4{
+    color:#2563eb;
+    margin-bottom:8px;
+    font-size:1rem;
+}
+@media(max-width:1100px){
+    .story-block{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .story-block.reverse .story-img,
+    .story-block.reverse .story-content{
+        order:unset;
+    }
+
+    .story-content{
+        padding:35px;
+    }
+
+    .story-content h2{
+        font-size:2.4rem;
+    }
+
+    .story-img img{
+        height:420px;
+    }
+}
 </style>
 </head>
 <body>
@@ -877,7 +1017,7 @@ section{
     </div>
 <div class="life-gallery">
     <div class="life-image-card img-left">
-        <img src="./images/einstein1.jpg" alt="Albert Einstein portrait">
+        <img src="./images/einstein1.jpg" alt="Albert Einstein nobel">
     </div>
 
     <div class="life-image-card img-right">
@@ -980,6 +1120,179 @@ section{
 
         </div>
     </div>
+
+<div class="story-life">
+
+    <div class="story-block">
+        <div class="story-img">
+            <img src="./images/einstein3.jpg" alt="Einstein detstvo">
+        </div>
+        <div class="story-content">
+            <div class="story-year">1879 – 1895</div>
+            <h2>Detstvo, ktoré odhalilo génia</h2>
+            <p>
+    Albert Einstein sa narodil 14. marca 1879 v nemeckom meste Ulm do židovskej rodiny.
+    Krátko po jeho narodení sa rodina presťahovala do Mníchova, kde jeho otec Hermann
+    a strýko Jakob podnikali v elektrotechnike. Už od útleho veku bolo zrejmé,
+    že Albert premýšľa inak než ostatné deti.
+</p>
+
+<p>
+    Ako malý chlapec bol tichý, uzavretý a veľmi pozorovací.
+    Namiesto bežných detských hier ho fascinovali otázky o tom,
+    ako funguje svet okolo neho. Zlomovým momentom bolo,
+    keď mu otec ukázal jednoduchý kompas.
+    Malý Albert bol ohromený tým, že ihla sa vždy otočila rovnakým smerom,
+    aj keď sa jej nič viditeľné nedotýkalo.
+    Tento moment v ňom vyvolal prvé hlboké otázky o neviditeľných silách prírody.
+</p>
+
+<p>
+    V škole nebol typickým vzorným žiakom. Nepáčil sa mu prísny memorovací systém,
+    autoritatívni učitelia ani slepé opakovanie faktov.
+    Oveľa viac ho priťahovalo samostatné rozmýšľanie.
+    Matematiku a geometriu miloval natoľko,
+    že už ako tínedžer študoval knihy určené pre vysokoškolákov.
+</p>
+
+<p>
+    V období dospievania sa rodina presťahovala do Talianska,
+    no Albert zostal istý čas sám v Nemecku kvôli škole.
+    Neskôr odišiel za rodinou a pokračoval v štúdiu vo Švajčiarsku,
+    kde sa postupne formovala jeho slobodná a nekonvenčná myseľ.
+</p>
+
+<p>
+    Už v mladosti si kládol otázku,
+    ktorá sa neskôr stala základom jeho revolučných teórií:
+    „Čo by som videl, keby som cestoval spolu s lúčom svetla?“
+    Táto jednoduchá predstava sa stala jednou z najikonickejších myšlienok
+    v dejinách fyziky.
+</p>
+
+            <div class="story-quote">
+                „Najkrajší zážitok je tajomno. Je zdrojom každej pravej vedy.“
+            </div>
+
+            <div class="story-facts">
+                <div class="fact-box">
+                    <h4>Miesto narodenia</h4>
+                    <p>Ulm, Nemecko</p>
+                </div>
+                <div class="fact-box">
+                    <h4>Záujem od detstva</h4>
+                    <p>Matematika, kompas, geometria</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-block reverse">
+        <div class="story-img">
+            <img src="./images/einstein4.jpg" alt="ETH Zurich">
+        </div>
+        <div class="story-content">
+            <div class="story-year">1896 – 1905</div>
+            <h2>Štúdium a revolúcia vo fyzike</h2>
+            <p>
+    V roku 1896 nastúpil na prestížnu ETH Zürich,
+    kde študoval matematiku a fyziku.
+    Práve tu sa jeho talent začal rozvíjať naplno.
+    Einstein bol známy tým, že často vynechával prednášky,
+    no o to viac študoval samostatne a do hĺbky.
+</p>
+
+<p>
+    Počas štúdia spoznal Milevu Marić,
+    talentovanú študentku fyziky,
+    ktorá sa neskôr stala jeho manželkou.
+    Spoločne diskutovali o vede, filozofii a fyzikálnych problémoch,
+    čo ešte viac podporilo Einsteinovu tvorivú myseľ.
+</p>
+
+<p>
+    Po ukončení školy sa mu dlho nedarilo nájsť akademickú pozíciu,
+    preto prijal miesto na patentovom úrade v Berne.
+    Táto práca sa paradoxne stala ideálnym prostredím
+    pre jeho vedecké premýšľanie.
+    Každodenne analyzoval technické vynálezy,
+    elektrické zariadenia a synchronizáciu času,
+    čo neskôr výrazne ovplyvnilo jeho teóriu relativity.
+</p>
+
+<p>
+    Rok 1905 je dodnes označovaný ako jeho „Annus Mirabilis“ – zázračný rok.
+    Počas jediného roka publikoval štyri vedecké práce,
+    ktoré navždy zmenili modernú fyziku.
+</p>
+
+<p>
+    Vysvetlil Brownov pohyb, čím poskytol dôkaz existencie atómov,
+    objasnil fotoelektrický jav, za ktorý neskôr získal Nobelovu cenu,
+    predstavil špeciálnu teóriu relativity
+    a svetu dal rovnicu E = mc²,
+    jednu z najslávnejších rovníc v histórii ľudstva.
+</p>
+
+<p>
+    Touto rovnicou ukázal,
+    že hmota a energia sú dve podoby tej istej reality,
+    čo spôsobilo revolúciu nielen vo fyzike,
+    ale aj v chápaní samotného vesmíru.
+</p>
+        </div>
+    </div>
+
+    <div class="story-block">
+        <div class="story-img">
+            <img src="./images/einstein5.jpg" alt="Princeton">
+        </div>
+        <div class="story-content">
+            <div class="story-year">1933 – 1955</div>
+            <h2>Princeton, vesmír a nesmrteľný odkaz</h2>
+            <p>
+    V roku 1933, po nástupe nacizmu v Nemecku,
+    Einstein opustil Európu a odišiel do Spojených štátov amerických.
+    Usadil sa v Princetone, kde pôsobil na Institute for Advanced Study.
+    Tu sa stal nielen vedeckou legendou,
+    ale aj symbolom inteligencie a humanizmu.
+</p>
+
+<p>
+    Posledné desaťročia života venoval snahe vytvoriť
+    jednotnú teóriu poľa – elegantný matematický opis,
+    ktorý by spojil gravitáciu, elektromagnetizmus
+    a ostatné sily prírody do jednej teórie.
+    Hoci sa mu tento cieľ nepodarilo úplne dosiahnuť,
+    jeho práca položila základy pre moderné snahy
+    o „teóriu všetkého“.
+</p>
+
+<p>
+    Einstein sa aktívne vyjadroval aj k spoločenským témam.
+    Bol zástancom mieru, humanizmu a medzinárodnej spolupráce.
+    Varoval pred nebezpečenstvom jadrových zbraní
+    a zároveň zdôrazňoval morálnu zodpovednosť vedcov.
+</p>
+
+<p>
+    Zomrel 18. apríla 1955 v Princetone.
+    Aj po smrti zostal jedným z najväčších symbolov geniality.
+    Jeho teórie dnes ovplyvňujú modernú kozmológiu,
+    GPS navigáciu, výskum čiernych dier,
+    gravitačné vlny aj technológie budúcnosti.
+</p>
+
+<p>
+    Einsteinov životný príbeh je dôkazom,
+    že skutočná genialita nevzniká len z vedomostí,
+    ale predovšetkým z nekonečnej zvedavosti,
+    predstavivosti a odvahy spochybniť zaužívané pravidlá.
+</p>
+        </div>
+    </div>
+
+</div>
 </section>
 <section id="kariera" style="height:100vh;"></section>
 <section id="fotoelektricky" style="height:100vh;"></section>
