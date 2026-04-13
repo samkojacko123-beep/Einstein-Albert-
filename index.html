@@ -1148,6 +1148,127 @@ section{
     max-width:65ch;
 }
 }
+
+/* ===== CAREER SECTION ===== */
+.career-section{
+    position:relative;
+    padding:180px 8%;
+    background:
+        radial-gradient(circle at top left, rgba(96,165,250,.10), transparent 35%),
+        linear-gradient(180deg,#ffffff,#f8fbff);
+    border-top-left-radius:70px;
+    border-top-right-radius:70px;
+    overflow:hidden;
+}
+
+.career-header{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 70px;
+}
+
+.career-header h2{
+    font-size:4rem;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.career-header p{
+    font-size:1.1rem;
+    color:#475569;
+    line-height:1.9;
+}
+
+.career-controls{
+    display:flex;
+    justify-content:flex-end;
+    gap:14px;
+    margin-bottom:30px;
+}
+
+.career-btn{
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.8);
+    backdrop-filter:blur(14px);
+    box-shadow:0 10px 30px rgba(37,99,235,.12);
+    color:#2563eb;
+    font-size:1.5rem;
+    font-weight:800;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.career-btn:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+.career-slider{
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    display:flex;
+    gap:35px;
+    padding-bottom:20px;
+    scrollbar-width:none;
+    scroll-behavior:smooth;
+}
+
+.career-slider::-webkit-scrollbar{
+    display:none;
+}
+
+.career-card{
+    min-width:420px;
+    max-width:420px;
+    scroll-snap-align:center;
+    padding:40px;
+    border-radius:34px;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(255,255,255,.85);
+    backdrop-filter:blur(18px);
+    box-shadow:0 20px 50px rgba(37,99,235,.08);
+    transition:.35s;
+    flex-shrink:0;
+}
+
+.career-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 30px 70px rgba(37,99,235,.14);
+}
+
+.career-year{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(219,234,254,.8);
+    color:#2563eb;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.career-card h3{
+    font-size:2rem;
+    margin-bottom:18px;
+}
+
+.career-card p{
+    line-height:2;
+    color:#475569;
+    font-size:1.05rem;
+}
+
+@media(max-width:900px){
+    .career-card{
+        min-width:85vw;
+        max-width:85vw;
+    }
+
+    .career-header h2{
+        font-size:2.6rem;
+    }
+}
 </style>
 </head>
 <body>
@@ -1528,7 +1649,153 @@ section{
 
 </div>
 </section>
-<section id="kariera" style="height:100vh;"></section>
+<section id="kariera" class="career-section">
+<div class="career-header">
+    <span class="section-badge">🚀 Kariéra</span>
+    <h2>Vedecká kariéra a revolučné objavy</h2>
+    <p>
+        Preskúmaj detailnú cestu Einsteinovej profesionálnej kariéry —
+        od patentového úradu až po najväčšie fyzikálne teórie,
+        ktoré navždy zmenili chápanie vesmíru.
+    </p>
+</div>
+
+<div class="career-controls">
+    <button class="career-btn career-left">←</button>
+    <button class="career-btn career-right">→</button>
+</div>
+
+<div class="career-slider">
+
+    <article class="career-card">
+        <div class="career-year">1902</div>
+        <h3>Patentový úrad v Berne</h3>
+        <p>
+            Einstein nastúpil ako technický expert 3. triedy na patentový úrad.
+            Každý deň analyzoval synchronizáciu hodín, elektrické zariadenia
+            a prenos signálov. Práve tu sa zrodili jeho prvé úvahy o tom,
+            ako čas plynie pre rôznych pozorovateľov.
+            Tento „obyčajný“ úrad sa stal kolískou relativity.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1905</div>
+        <h3>Zázračný rok fyziky</h3>
+        <p>
+            V roku 1905 publikoval štyri práce,
+            ktoré zmenili celé 20. storočie:
+            dôkaz existencie atómov cez Brownov pohyb,
+            fotoelektrický jav, špeciálnu relativitu
+            a slávny vzťah medzi energiou a hmotou.
+            Tento rok z neznámeho úradníka spravil vedeckého revolucionára.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1909</div>
+        <h3>Prvý profesor</h3>
+        <p>
+            Einstein opustil patentový úrad a stal sa profesorom
+            teoretickej fyziky v Zürichu.
+            Začal formovať novú generáciu fyzikov
+            a jeho meno sa začalo objavovať medzi najväčšími vedcami Európy.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1911</div>
+        <h3>Pražské obdobie</h3>
+        <p>
+            V Prahe rozvíjal myšlienku,
+            že gravitácia môže ohýbať svetlo.
+            Prvýkrát sa seriózne zaoberal zakrivením priestoru,
+            čo bol zásadný predstupeň všeobecnej relativity.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1915</div>
+        <h3>Všeobecná teória relativity</h3>
+        <p>
+            Po rokoch matematického boja predstavil
+            jednu z najväčších teórií ľudstva.
+            Gravitácia už nebola sila,
+            ale geometria samotného časopriestoru.
+            Táto myšlienka vysvetlila anomálie Merkúru
+            a predpovedala čierne diery aj gravitačné vlny.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1919</div>
+        <h3>Svetová sláva</h3>
+        <p>
+            Britský astronóm Arthur Eddington počas zatmenia Slnka
+            experimentálne potvrdil ohyb svetla gravitáciou.
+            Einstein sa cez noc stal svetovou celebritou.
+            Médiá ho nazvali mužom, ktorý prepísal Newtona.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1921</div>
+        <h3>Nobelova cena</h3>
+        <p>
+            Nobelovu cenu získal nie za relativitu,
+            ale za vysvetlenie fotoelektrického javu.
+            Tento objav otvoril dvere kvantovej mechanike,
+            solárnym panelom, laserom a modernej elektronike.
+        </p>
+    </article>
+    <article class="career-card">
+    <div class="career-year">1927</div>
+    <h3>Solvay konferencia</h3>
+    <p>
+        Einstein sa stretol s najväčšími fyzikmi sveta,
+        vrátane Nielsa Bohra, Marie Curie a Schrödingera.
+        Diskusie o kvantovej mechanike sa stali legendárne
+        a formovali budúcnosť modernej fyziky.
+    </p>
+</article>
+
+    <article class="career-card">
+        <div class="career-year">1933</div>
+        <h3>Princeton a nový svet</h3>
+        <p>
+            Po odchode z nacistického Nemecka sa usadil v USA.
+            Na Institute for Advanced Study sa stal symbolom
+            vedeckej slobody a pokračoval vo výskume
+            jednotnej teórie poľa.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1935</div>
+        <h3>EPR paradox</h3>
+        <p>
+            Spolu s Podolským a Rosenom spochybnil úplnosť
+            kvantovej mechaniky.
+            Tento paradox sa stal základom
+            moderného výskumu kvantového previazania,
+            kvantových sietí a kvantových počítačov.
+        </p>
+    </article>
+
+    <article class="career-card">
+        <div class="career-year">1955</div>
+        <h3>Nesmrteľné dedičstvo</h3>
+        <p>
+            Posledné roky venoval snahe zjednotiť všetky sily prírody.
+            Hoci sa mu to nepodarilo dokončiť,
+            jeho kariéra položila základy modernej kozmológie,
+            GPS systémov, gravitačných vĺn
+            a dnešnej teórie všetkého.
+        </p>
+    </article>
+
+</div>
+</section>
 <section id="fotoelektricky" style="height:100vh;"></section>
 <section id="ocenenia" style="height:100vh;"></section>
 <section id="zaujimavosti" style="height:100vh;"></section>
@@ -1591,6 +1858,23 @@ leftBtn.addEventListener('click', () => {
 rightBtn.addEventListener('click', () => {
     slider.scrollBy({
         left: 430,
+        behavior: 'smooth'
+    });
+});
+const careerSlider = document.querySelector('.career-slider');
+const careerLeft = document.querySelector('.career-left');
+const careerRight = document.querySelector('.career-right');
+
+careerLeft.addEventListener('click', () => {
+    careerSlider.scrollBy({
+        left: -460,
+        behavior: 'smooth'
+    });
+});
+
+careerRight.addEventListener('click', () => {
+    careerSlider.scrollBy({
+        left: 460,
         behavior: 'smooth'
     });
 });
