@@ -380,8 +380,15 @@ section{
 /* ===== ULTRA PREMIUM HORIZONTAL LIFE TIMELINE ===== */
 .life-section{
     position:relative;
-    padding:180px 8%;
-    z-index:2;
+    padding:220px 8% 180px;
+    margin-top:-60px;
+    border-top-left-radius:70px;
+    border-top-right-radius:70px;
+    background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.45),
+    rgba(255,255,255,.75)
+);
 }
 .life-section::before{
     content:"";
@@ -804,13 +811,50 @@ section{
 /* ===== PREMIUM SECTION DIVIDER ===== */
 .section-transition{
     position:relative;
-    height:220px;
+    height:320px;
     overflow:hidden;
     z-index:2;
-    margin-top:-40px;
-    margin-bottom:-40px;
+    margin-top:-30px;
+    margin-bottom:-30px;
+
+    background:
+    radial-gradient(circle at 20% 40%, rgba(59,130,246,.18), transparent 30%),
+    radial-gradient(circle at 80% 60%, rgba(168,85,247,.14), transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(56,189,248,.18), transparent 45%),
+        linear-gradient(
+            180deg,
+            rgba(219,234,254,.35),
+            rgba(191,219,254,.55),
+            rgba(224,242,254,.75),
+            rgba(255,255,255,1)
+        );
+}
+.section-transition::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 120px,
+            rgba(37,99,235,.04) 121px
+        );
+    pointer-events:none;
 }
 
+.section-transition::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(56,189,248,.18), transparent 70%);
+    filter:blur(60px);
+}
 .transition-line{
     position:absolute;
     left:0;
@@ -854,7 +898,74 @@ section{
     transform:translate(-50%,-50%);
     animation:spinGear 20s linear infinite;
 }
+.orbit-1{
+    width:90px;
+    height:90px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    animation-duration:20s;
+}
 
+.orbit-2{
+    width:180px;
+    height:180px;
+    left:30%;
+    top:40%;
+    animation-duration:35s;
+    animation-direction:reverse;
+}
+
+
+    .orbit-3{
+    width:140px;
+    height:140px;
+    left:82%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    animation-duration:28s;
+}
+.floating-formula{
+    position:absolute;
+    font-weight:800;
+    color:rgba(37,99,235,.45);
+    letter-spacing:1px;
+    z-index:3;
+    user-select:none;
+    animation:floatFormula 6s ease-in-out infinite;
+    text-shadow:0 0 20px rgba(56,189,248,.15);
+}
+
+.formula-1{
+    left:18%;
+    top:35%;
+    font-size:2rem;
+}
+
+.formula-2{
+    left:72%;
+    top:28%;
+    font-size:1.6rem;
+    animation-delay:1.5s;
+}
+
+.formula-3{
+    left:50%;
+    bottom:20%;
+    font-size:1.4rem;
+    animation-delay:3s;
+}
+
+@keyframes floatFormula{
+    0%,100%{
+        transform:translateY(0);
+        opacity:.35;
+    }
+    50%{
+        transform:translateY(-14px);
+        opacity:.75;
+    }
+}
 .story-life{
     margin-top:140px;
     display:flex;
@@ -1101,7 +1212,14 @@ section{
 <div class="section-transition">
     <div class="transition-line"></div>
     <div class="transition-glow"></div>
-    <div class="divider-orbit"></div>
+
+    <div class="divider-orbit orbit-1"></div>
+    <div class="divider-orbit orbit-2"></div>
+    <div class="divider-orbit orbit-3"></div>
+
+    <div class="floating-formula formula-1">E = mc²</div>
+    <div class="floating-formula formula-2">Δt</div>
+    <div class="floating-formula formula-3">c = 3×10⁸</div>
 </div>
 
 <section id="zivot" class="life-section">
