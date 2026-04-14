@@ -1514,6 +1514,297 @@ section{
     border-radius:20px;
     background:rgba(219,234,254,.45);
 }
+/* ===== EXAMPLES PREMIUM SECTION ===== */
+.examples-section{
+    margin-top:120px;
+    padding-top:100px;
+    border-top:1px solid rgba(96,165,250,.18);
+    position:relative;
+}
+
+.examples-section::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(37,99,235,.35),
+        rgba(56,189,248,.7),
+        rgba(37,99,235,.35),
+        transparent
+    );
+}
+
+.examples-header{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 70px;
+}
+
+.examples-header h2{
+    font-size:3rem;
+    margin-bottom:18px;
+    letter-spacing:-1px;
+}
+
+.examples-header p{
+    font-size:1.08rem;
+    line-height:1.9;
+    color:#475569;
+}
+
+/* cards */
+.examples-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(430px,1fr));
+    gap:28px;
+}
+
+.example-card{
+    position:relative;
+    overflow:hidden;
+    padding:38px;
+    border-radius:32px;
+
+    background:
+        radial-gradient(circle at top right, rgba(56,189,248,.08), transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.62));
+
+    border:1px solid rgba(255,255,255,.9);
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 20px 50px rgba(37,99,235,.08),
+        inset 0 1px 0 rgba(255,255,255,.7);
+
+    transition:all .35s ease;
+}
+
+.example-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 30px 70px rgba(37,99,235,.14),
+        0 0 30px rgba(56,189,248,.10);
+}
+
+.example-card h3{
+    font-size:1.35rem;
+    line-height:1.6;
+    margin-bottom:24px;
+    color:#0f172a;
+}
+
+/* better button */
+.solution-btn{
+    padding:14px 22px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+    transition:.3s;
+}
+
+.solution-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(37,99,235,.35);
+}
+
+/* expanded solution */
+.solution{
+    display:none;
+    margin-top:24px;
+    padding:28px;
+    border-radius:24px;
+    background:rgba(219,234,254,.45);
+    border:1px solid rgba(255,255,255,.75);
+    line-height:2;
+    color:#334155;
+    animation:fadeIn .35s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* mobile */
+@media(max-width:900px){
+    .examples-header h2{
+        font-size:2.2rem;
+    }
+
+    .examples-grid{
+        grid-template-columns:1fr;
+    }
+}
+/* ===== PHOTOELECTRIC SECTION PREMIUM REDESIGN ===== */
+.photoelectric-section{
+    position:relative;
+    padding:220px 8%;
+    overflow:hidden;
+    isolation:isolate;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(37,99,235,.10), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(56,189,248,.10), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(168,85,247,.08), transparent 35%),
+        linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff,#ffffff);
+}
+
+/* subtle scientific grid */
+.photoelectric-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 140px,
+            rgba(37,99,235,.03) 141px
+        ),
+        repeating-linear-gradient(
+            180deg,
+            transparent,
+            transparent 120px,
+            rgba(56,189,248,.03) 121px
+        );
+}
+
+/* decorative orbits */
+.photoelectric-section::after{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    top:120px;
+    right:-140px;
+    border-radius:50%;
+    border:2px dashed rgba(37,99,235,.12);
+    animation:spinGear 60s linear infinite;
+    pointer-events:none;
+}
+
+/* stronger theory blocks */
+.theory-box,
+.derivation-box{
+    position:relative;
+    overflow:hidden;
+    padding:48px;
+    border-radius:36px;
+    margin-bottom:45px;
+    background:
+        radial-gradient(circle at top right, rgba(56,189,248,.06), transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,.84), rgba(255,255,255,.66));
+    border:1px solid rgba(255,255,255,.9);
+    box-shadow:
+        0 25px 60px rgba(37,99,235,.08),
+        0 0 30px rgba(56,189,248,.04);
+}
+
+/* glowing top line */
+.theory-box::before,
+.derivation-box::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(37,99,235,.45),
+        rgba(56,189,248,.8),
+        transparent
+    );
+}
+
+/* better formulas */
+.formula-main{
+    position:relative;
+    display:inline-block;
+    padding:18px 28px;
+    border-radius:20px;
+    margin:28px 0;
+    background:rgba(219,234,254,.45);
+    border:1px solid rgba(255,255,255,.8);
+    box-shadow:0 10px 25px rgba(37,99,235,.08);
+    font-size:2rem;
+    font-weight:900;
+    color:#2563eb;
+}
+
+/* divider before examples */
+.examples-section{
+    position:relative;
+    margin-top:150px;
+    padding-top:130px;
+}
+
+.examples-section::after{
+    content:"";
+    position:absolute;
+    top:40px;
+    left:50%;
+    width:180px;
+    height:180px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    border:2px dashed rgba(37,99,235,.12);
+    animation:spinGear 22s linear infinite;
+}
+
+/* more premium cards */
+.example-card{
+    position:relative;
+    min-height:320px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:42px;
+    border-radius:34px;
+    background:
+        radial-gradient(circle at top right, rgba(56,189,248,.10), transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.68));
+    border:1px solid rgba(255,255,255,.95);
+    box-shadow:
+        0 25px 60px rgba(37,99,235,.10),
+        0 0 30px rgba(56,189,248,.05);
+}
+
+/* subtle left accent */
+.example-card::before{
+    content:"";
+    position:absolute;
+    top:30px;
+    left:0;
+    width:4px;
+    height:80px;
+    border-radius:20px;
+    background:linear-gradient(#2563eb,#38bdf8);
+}
+
+/* smoother solution reveal */
+.solution{
+    margin-top:24px;
+    border-left:4px solid #2563eb;
+    background:rgba(219,234,254,.35);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+}
 </style>
 </head>
 <body>
@@ -2079,11 +2370,31 @@ section{
 <div class="theory-box">
     <h3> Úvod do fotoelektrického javu</h3>
 
-    <p>
-        Svetlo neprenáša energiu spojito, ale v malých balíčkoch energie,
-        ktoré nazývame <strong>fotóny</strong>.
-        Každý fotón nesie energiu:
-    </p>
+<p>
+    Svetlo podľa klasickej fyziky dlho považovali vedci iba za elektromagnetické vlnenie,
+    ktoré prenáša energiu spojito. Experimenty na prelome 19. a 20. storočia však ukázali,
+    že pri interakcii s látkou sa svetlo správa oveľa zvláštnejšie.
+</p>
+
+<p>
+    Einstein nadviazal na Planckovu myšlienku kvantovania energie
+    a vyslovil revolučný predpoklad, že svetlo neprenáša energiu plynulo,
+    ale v malých diskrétnych balíčkoch energie,
+    ktoré nazývame <strong>fotóny</strong>.
+</p>
+
+<p>
+    Každý fotón nesie presne určenú energiu,
+    ktorá závisí výlučne od <strong>frekvencie žiarenia</strong>.
+    Čím je frekvencia svetla vyššia,
+    tým väčšiu energiu má jeden fotón.
+    Práve preto má napríklad ultrafialové žiarenie
+    väčšiu schopnosť uvoľňovať elektróny z kovu než viditeľné alebo infračervené svetlo.
+</p>
+
+<p>
+    Energia jedného fotónu sa vyjadruje vzťahom:
+</p>
 
     <div class="formula-main">E = hf</div>
 
@@ -2223,12 +2534,12 @@ section{
 
     <div class="formula-main">λ₀ = hc / W</div>
 <p>
-    Tento vzťah platí pri použití jednotiek:
-    λ v nanometroch a W v elektrónvoltoch.
-
-     Ak má svetlo väčšiu vlnovú dĺžku,
-     energia fotónu je príliš malá na uvoľnenie elektrónu.
-    </p>
+    Tento všeobecný vzťah platí v základných SI jednotkách,
+    kde λ je vo metroch, h je Planckova konštanta,
+    c je rýchlosť svetla a W je výstupná práca v jouloch.
+    Pri školských výpočtoch pre λ v nanometroch a W v eV
+    sa často používa aj praktický tvar λ₀ = 1240 / W.
+</p>
 </div>
 
 <div class="theory-box">
@@ -2260,8 +2571,30 @@ section{
         <li>meraní intenzity svetla</li>
     </ul>
 </div>
+<div class="career-transition">
+    <div class="career-line"></div>
+    <div class="career-glow"></div>
+
+    <div class="career-ring ring-1"></div>
+    <div class="career-ring ring-2"></div>
+    <div class="career-ring ring-3"></div>
+
+    <div class="career-formula cf1">hf</div>
+    <div class="career-formula cf2">Eₖ</div>
+    <div class="career-formula cf3">λ₀</div>
+</div>
+   <div class="examples-section">
+    <div class="examples-header">
+        <span class="section-badge">Riešené príklady</span>
+        <h2>Interaktívne príklady fotoelektrického javu</h2>
+        <p>
+            Precvič si Einsteinovu rovnicu na praktických úlohách.
+            Kliknutím zobrazíš výsledok aj kompletný postup riešenia.
+        </p>
+    </div>
 
     <div class="examples-grid" id="examples-grid"></div>
+</div>
 </section>
 <section id="ocenenia" style="height:100vh;"></section>
 <section id="zaujimavosti" style="height:100vh;"></section>
