@@ -808,19 +808,18 @@ section{
         font-size:4.2rem;
     }
 }
-/* ===== PREMIUM SECTION DIVIDER ===== */
-.section-transition{
+
+.premium-divider{
     position:relative;
     height:320px;
     overflow:hidden;
     z-index:2;
     margin-top:-30px;
     margin-bottom:-30px;
-
     background:
-    radial-gradient(circle at 20% 40%, rgba(59,130,246,.18), transparent 30%),
-    radial-gradient(circle at 80% 60%, rgba(168,85,247,.14), transparent 35%),
-    radial-gradient(circle at 50% 50%, rgba(56,189,248,.18), transparent 45%),
+        radial-gradient(circle at 20% 40%, rgba(59,130,246,.18), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(168,85,247,.14), transparent 35%),
+        radial-gradient(circle at 50% 50%, rgba(56,189,248,.18), transparent 45%),
         linear-gradient(
             180deg,
             rgba(219,234,254,.35),
@@ -829,7 +828,7 @@ section{
             rgba(255,255,255,1)
         );
 }
-.section-transition::before{
+.premium-divider::before{
     content:"";
     position:absolute;
     inset:0;
@@ -843,7 +842,7 @@ section{
     pointer-events:none;
 }
 
-.section-transition::after{
+.premium-divider::after{
     content:"";
     position:absolute;
     width:600px;
@@ -855,106 +854,7 @@ section{
     background:radial-gradient(circle, rgba(56,189,248,.18), transparent 70%);
     filter:blur(60px);
 }
-.transition-line{
-    position:absolute;
-    left:0;
-    top:50%;
-    width:100%;
-    height:2px;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(37,99,235,.25),
-        rgba(56,189,248,.8),
-        rgba(37,99,235,.25),
-        transparent
-    );
-    transform:translateY(-50%);
-}
 
-.transition-glow{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:500px;
-    height:120px;
-    transform:translate(-50%,-50%);
-    background:radial-gradient(
-        ellipse,
-        rgba(56,189,248,.18),
-        transparent 70%
-    );
-    filter:blur(30px);
-}
-
-.divider-orbit{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:90px;
-    height:90px;
-    border:2px dashed rgba(37,99,235,.22);
-    border-radius:50%;
-    transform:translate(-50%,-50%);
-    animation:spinGear 20s linear infinite;
-}
-.orbit-1{
-    width:90px;
-    height:90px;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    animation-duration:20s;
-}
-
-.orbit-2{
-    width:180px;
-    height:180px;
-    left:30%;
-    top:40%;
-    animation-duration:35s;
-    animation-direction:reverse;
-}
-
-
-    .orbit-3{
-    width:140px;
-    height:140px;
-    left:82%;
-    top:55%;
-    transform:translate(-50%,-50%);
-    animation-duration:28s;
-}
-.floating-formula{
-    position:absolute;
-    font-weight:800;
-    color:rgba(37,99,235,.45);
-    letter-spacing:1px;
-    z-index:3;
-    user-select:none;
-    animation:floatFormula 6s ease-in-out infinite;
-    text-shadow:0 0 20px rgba(56,189,248,.15);
-}
-
-.formula-1{
-    left:18%;
-    top:35%;
-    font-size:2rem;
-}
-
-.formula-2{
-    left:72%;
-    top:28%;
-    font-size:1.6rem;
-    animation-delay:1.5s;
-}
-
-.formula-3{
-    left:50%;
-    bottom:20%;
-    font-size:1.4rem;
-    animation-delay:3s;
-}
 
 @keyframes floatFormula{
     0%,100%{
@@ -1902,6 +1802,263 @@ section{
         grid-row:span 1;
     }
 }
+
+.awards-divider{
+    position:relative;
+    height:260px;
+    overflow:hidden;
+    margin-top:60px;
+    margin-bottom:-40px;
+    z-index:2;
+
+    background:
+        radial-gradient(circle at 20% 40%, rgba(59,130,246,.10), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(168,85,247,.08), transparent 35%),
+        radial-gradient(circle at 50% 50%, rgba(56,189,248,.12), transparent 45%),
+        linear-gradient(
+            90deg,
+            rgba(219,234,254,.55),
+            rgba(191,219,254,.65),
+            rgba(224,242,254,.75),
+            rgba(238,242,255,.85)
+        );
+}
+
+.awards-divider::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 120px,
+            rgba(37,99,235,.03) 121px
+        ),
+        repeating-linear-gradient(
+            180deg,
+            transparent,
+            transparent 120px,
+            rgba(37,99,235,.03) 121px
+        );
+}
+
+.awards-divider-line{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:2px;
+    transform:translateY(-50%);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(37,99,235,.22),
+        rgba(56,189,248,.7),
+        rgba(37,99,235,.22),
+        transparent
+    );
+}
+
+.awards-divider-glow{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:500px;
+    height:100px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(
+        ellipse,
+        rgba(56,189,248,.18),
+        transparent 70%
+    );
+    filter:blur(30px);
+}
+
+.divider-circle{
+    position:absolute;
+    border:2px dashed rgba(37,99,235,.14);
+    border-radius:50%;
+    animation:spinGear 35s linear infinite;
+}
+
+.circle-1{
+    width:180px;
+    height:180px;
+    left:28%;
+    top:48%;
+}
+
+.circle-2{
+    width:90px;
+    height:90px;
+    left:48%;
+    top:55%;
+    animation-duration:25s;
+}
+
+.circle-3{
+    width:140px;
+    height:140px;
+    right:16%;
+    top:52%;
+    animation-direction:reverse;
+}
+
+.divider-formula{
+    position:absolute;
+    font-weight:800;
+    color:rgba(37,99,235,.28);
+    text-shadow:0 0 20px rgba(56,189,248,.15);
+    animation:floatFormula 6s ease-in-out infinite;
+}
+
+.formula-left{
+    left:14%;
+    top:35%;
+    font-size:2rem;
+}
+
+.formula-center{
+    left:46%;
+    top:52%;
+    font-size:1.6rem;
+}
+
+.formula-right{
+    right:26%;
+    top:28%;
+    font-size:1.8rem;
+}
+
+
+/* ===== UNIVERSAL SECTION DIVIDER ===== */
+.universal-divider{
+    position:relative;
+    height:280px;
+    overflow:hidden;
+    z-index:2;
+    margin-top:-40px;
+    margin-bottom:-40px;
+
+    background:
+        radial-gradient(circle at 20% 40%, rgba(59,130,246,.12), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(168,85,247,.10), transparent 35%),
+        radial-gradient(circle at 50% 50%, rgba(56,189,248,.14), transparent 45%),
+        linear-gradient(
+            180deg,
+            rgba(219,234,254,.45),
+            rgba(191,219,254,.60),
+            rgba(224,242,254,.75),
+            rgba(255,255,255,1)
+        );
+}
+
+.universal-divider::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 120px,
+            rgba(37,99,235,.03) 121px
+        ),
+        repeating-linear-gradient(
+            180deg,
+            transparent,
+            transparent 120px,
+            rgba(37,99,235,.03) 121px
+        );
+}
+
+.universal-divider-line{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:2px;
+    transform:translateY(-50%);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(37,99,235,.25),
+        rgba(56,189,248,.8),
+        rgba(37,99,235,.25),
+        transparent
+    );
+}
+
+.universal-divider-glow{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:600px;
+    height:120px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(
+        ellipse,
+        rgba(56,189,248,.18),
+        transparent 70%
+    );
+    filter:blur(35px);
+}
+
+.universal-circle{
+    position:absolute;
+    border:2px dashed rgba(37,99,235,.14);
+    border-radius:50%;
+    animation:spinGear 30s linear infinite;
+}
+
+.uc1{
+    width:180px;
+    height:180px;
+    left:30%;
+    top:45%;
+}
+
+.uc2{
+    width:90px;
+    height:90px;
+    left:50%;
+    top:55%;
+    animation-duration:22s;
+}
+
+.uc3{
+    width:140px;
+    height:140px;
+    right:18%;
+    top:40%;
+    animation-direction:reverse;
+}
+
+.universal-formula{
+    position:absolute;
+    font-weight:800;
+    color:rgba(37,99,235,.30);
+    animation:floatFormula 6s ease-in-out infinite;
+}
+
+.uf1{
+    left:14%;
+    top:30%;
+    font-size:2rem;
+}
+
+.uf2{
+    left:48%;
+    top:55%;
+    font-size:1.4rem;
+}
+
+.uf3{
+    right:18%;
+    top:28%;
+    font-size:1.8rem;
+}
 </style>
 </head>
 <body>
@@ -1977,17 +2134,17 @@ section{
         </div>
     </div>
 </section>
-<div class="section-transition">
-    <div class="transition-line"></div>
-    <div class="transition-glow"></div>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
 
-    <div class="divider-orbit orbit-1"></div>
-    <div class="divider-orbit orbit-2"></div>
-    <div class="divider-orbit orbit-3"></div>
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
 
-    <div class="floating-formula formula-1">E = mc²</div>
-    <div class="floating-formula formula-2">Δt</div>
-    <div class="floating-formula formula-3">c = 3×10⁸</div>
+    <div class="universal-formula uf1">E = mc²</div>
+    <div class="universal-formula uf2">Δt</div>
+    <div class="universal-formula uf3">c = 3×10⁸</div>
 </div>
 
 <section id="zivot" class="life-section">
@@ -2283,18 +2440,21 @@ section{
 
 </div>
 </section>
-    <div class="career-transition">
-    <div class="career-line"></div>
-    <div class="career-glow"></div>
 
-    <div class="career-ring ring-1"></div>
-    <div class="career-ring ring-2"></div>
-    <div class="career-ring ring-3"></div>
 
-    <div class="career-formula cf1">E = mc²</div>
-    <div class="career-formula cf2">∇²</div>
-    <div class="career-formula cf3">Δx · Δp</div>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
+
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
+
+    <div class="universal-formula uf1">E = mc²</div>
+    <div class="universal-formula uf2">∇²</div>
+    <div class="universal-formula uf3">Δx · Δp</div>
 </div>
+
 <section id="kariera" class="career-section">
     <div class="career-orbit orbit-a"></div>
 <div class="career-orbit orbit-b"></div>
@@ -2444,17 +2604,17 @@ section{
 
 </div>
 </section>
-<div class="career-transition">
-    <div class="career-line"></div>
-    <div class="career-glow"></div>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
 
-    <div class="career-ring ring-1"></div>
-    <div class="career-ring ring-2"></div>
-    <div class="career-ring ring-3"></div>
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
 
-    <div class="career-formula cf1">hf</div>
-    <div class="career-formula cf2">Eₖ</div>
-    <div class="career-formula cf3">f₀</div>
+    <div class="universal-formula uf1">E = mc²</div>
+    <div class="universal-formula uf2">∇²</div>
+    <div class="universal-formula uf3">Δx · Δp</div>
 </div>
 <section id="fotoelektricky" class="photoelectric-section">
     <div class="career-header">
@@ -2669,17 +2829,17 @@ section{
         <li>meraní intenzity svetla</li>
     </ul>
 </div>
-<div class="career-transition">
-    <div class="career-line"></div>
-    <div class="career-glow"></div>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
 
-    <div class="career-ring ring-1"></div>
-    <div class="career-ring ring-2"></div>
-    <div class="career-ring ring-3"></div>
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
 
-    <div class="career-formula cf1">hf</div>
-    <div class="career-formula cf2">Eₖ</div>
-    <div class="career-formula cf3">λ₀</div>
+    <div class="universal-formula uf1">hf</div>
+    <div class="universal-formula uf2">Eₖ</div>
+    <div class="universal-formula uf3">f₀</div>
 </div>
    <div id="priklady" class="examples-section">
     <div class="examples-header">
@@ -2694,6 +2854,18 @@ section{
     <div class="examples-grid" id="examples-grid"></div>
 </div>
 </section>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
+
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
+
+    <div class="universal-formula uf1">E = mc²</div>
+    <div class="universal-formula uf2">c ≈ 3×10⁸</div>
+    <div class="universal-formula uf3">Δt</div>
+</div>
 <section id="ocenenia" class="awards-section">
     <div class="career-orbit orbit-a"></div>
     <div class="career-orbit orbit-b"></div>
@@ -2711,15 +2883,48 @@ section{
     <div class="awards-grid">
         <div class="award-card large">
             <img src="./images/einstein_award1.jpg" alt="Nobel Prize">
-            <div class="award-content">
-                <div class="award-year">1921</div>
-                <h3>Nobelova cena za fyziku</h3>
-                <p>
-                    Najprestížnejšie ocenenie získal za vysvetlenie
-                    fotoelektrického javu, čím položil základy
-                    kvantovej fyziky.
-                </p>
-            </div>
+           <div class="award-content">
+    <div class="award-year">1921</div>
+  
+    <h3>Nobelova cena za fyziku</h3>
+    <p>
+        Tento historický moment zachytáva Alberta Einsteina
+        pri preberaní Nobelovej ceny za fyziku,
+        jedného z najprestížnejších vedeckých ocenení na svete.
+        Hoci si ho dnes väčšina ľudí spája najmä s teóriou relativity
+        a slávnou rovnicou <strong>E = mc²</strong>,
+        Nobelovu cenu získal za svoje revolučné vysvetlenie
+        <strong>fotoelektrického javu</strong>.
+    </p>
+
+    <p>
+        Einstein dokázal, že svetlo sa nespráva iba ako vlnenie,
+        ale aj ako prúd častíc – fotónov,
+        pričom energia každého fotónu závisí od jeho frekvencie.
+        Tento prelomový objav úplne zmenil dovtedajšie chápanie svetla
+        a stal sa jedným zo základných pilierov
+        <strong>modernej kvantovej fyziky</strong>.
+    </p>
+
+    <p>
+        Význam tohto objavu siaha ďaleko za hranice teórie.
+        Princípy fotoelektrického javu dnes využívame
+        v <strong>solárnych paneloch, svetelných senzoroch,
+        digitálnych fotoaparátoch, CCD snímačoch, laserových technológiách
+        aj polovodičovej elektronike</strong>.
+        Nobelova cena tak neocenila iba jeden vedecký článok,
+        ale objav, ktorý zásadne ovplyvnil technologický vývoj
+        celého 20. a 21. storočia.
+    </p>
+
+    <p>
+        Táto fotografia zároveň symbolizuje chvíľu,
+        keď sa Einstein definitívne stal
+        svetovou vedeckou ikonou a synonymom geniality.
+        Jeho meno odvtedy navždy patrí medzi najväčšie osobnosti
+        dejín ľudskej vedy.
+    </p>
+</div>
         </div>
 
         <div class="award-card">
@@ -2749,7 +2954,7 @@ section{
         <div class="award-card wide">
             <img src="./images/einstein_award4.jpg" alt="Legacy">
             <div class="award-content">
-                <div class="award-year">∞</div>
+                <div class="award-year">Future</div>
                 <h3>Nesmrteľný vedecký odkaz</h3>
                 <p>
                     Einsteinovo meno dnes nesú školy, observatóriá,
