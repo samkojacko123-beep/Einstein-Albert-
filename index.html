@@ -1805,6 +1805,101 @@ section{
     background:rgba(219,234,254,.35);
     box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
 }
+
+.awards-section{
+    position:relative;
+    padding:180px 8%;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(59,130,246,.12), transparent 30%),
+        radial-gradient(circle at 85% 70%, rgba(168,85,247,.10), transparent 35%),
+        radial-gradient(circle at 50% 50%, rgba(56,189,248,.08), transparent 45%),
+        linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff);
+}
+
+.awards-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:70px;
+}
+
+.award-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:34px;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(255,255,255,.85);
+    backdrop-filter:blur(20px);
+    box-shadow:0 25px 60px rgba(37,99,235,.08);
+    transition:.4s ease;
+}
+
+.award-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 35px 90px rgba(37,99,235,.16);
+}
+
+.award-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    display:block;
+}
+
+.award-content{
+    padding:30px;
+}
+
+.award-year{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.award-content h3{
+    font-size:1.8rem;
+    margin-bottom:18px;
+}
+
+.award-content p{
+    line-height:2;
+    color:#475569;
+}
+
+.award-card.large{
+    grid-row:span 2;
+}
+
+.award-card.large img{
+    height:420px;
+}
+
+.award-card.wide{
+    grid-column:span 2;
+}
+
+.award-card.wide img{
+    height:340px;
+}
+
+@media(max-width:900px){
+    .awards-grid{
+        grid-template-columns:1fr;
+    }
+
+    .award-card.wide{
+        grid-column:span 1;
+    }
+
+    .award-card.large{
+        grid-row:span 1;
+    }
+}
 </style>
 </head>
 <body>
@@ -1822,6 +1917,7 @@ section{
         <a href="#zivot">Život</a>
         <a href="#kariera">Kariéra</a>
         <a href="#fotoelektricky">Fotoelektrický jav</a>
+        <a href="#priklady">Príklady</a>
         <a href="#ocenenia">Ocenenia</a>
         <a href="#zaujimavosti">Zaujímavosti</a>
         <a href="#fotogaleria">Fotogaléria</a>
@@ -2583,7 +2679,7 @@ section{
     <div class="career-formula cf2">Eₖ</div>
     <div class="career-formula cf3">λ₀</div>
 </div>
-   <div class="examples-section">
+   <div id="priklady" class="examples-section">
     <div class="examples-header">
         <span class="section-badge">Riešené príklady</span>
         <h2>Interaktívne príklady fotoelektrického javu</h2>
@@ -2596,7 +2692,71 @@ section{
     <div class="examples-grid" id="examples-grid"></div>
 </div>
 </section>
-<section id="ocenenia" style="height:100vh;"></section>
+<section id="ocenenia" class="awards-section">
+    <div class="career-orbit orbit-a"></div>
+    <div class="career-orbit orbit-b"></div>
+
+    <div class="career-header">
+        <span class="section-badge"> Ocenenia</span>
+        <h2>Einsteinove ocenenia a svetové uznanie</h2>
+        <p>
+            Albert Einstein sa stal symbolom geniality.
+            Jeho objavy mu priniesli Nobelovu cenu, vedecké medaily,
+            čestné doktoráty a nesmrteľné miesto v dejinách ľudstva.
+        </p>
+    </div>
+
+    <div class="awards-grid">
+        <div class="award-card large">
+            <img src="./images/einstein_award1.jpg" alt="Nobel Prize">
+            <div class="award-content">
+                <div class="award-year">1921</div>
+                <h3>Nobelova cena za fyziku</h3>
+                <p>
+                    Najprestížnejšie ocenenie získal za vysvetlenie
+                    fotoelektrického javu, čím položil základy
+                    kvantovej fyziky.
+                </p>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <img src="./images/einstein_award2.jpg" alt="Medal">
+            <div class="award-content">
+                <div class="award-year">1925</div>
+                <h3>Copley Medal</h3>
+                <p>
+                    Jedno z najstarších vedeckých ocenení udeľované
+                    Royal Society za mimoriadny prínos vede.
+                </p>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <img src="./images/einstein_award3.jpg" alt="Honor">
+            <div class="award-content">
+                <div class="award-year">1929</div>
+                <h3>Max Planck Medal</h3>
+                <p>
+                    Ocenenie za výnimočný prínos teoretickej fyzike
+                    a rozvoj modernej kozmológie.
+                </p>
+            </div>
+        </div>
+
+        <div class="award-card wide">
+            <img src="./images/einstein_award4.jpg" alt="Legacy">
+            <div class="award-content">
+                <div class="award-year">∞</div>
+                <h3>Nesmrteľný vedecký odkaz</h3>
+                <p>
+                    Einsteinovo meno dnes nesú školy, observatóriá,
+                    vedecké ceny, sondy aj samotné fyzikálne princípy.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="zaujimavosti" style="height:100vh;"></section>
 <section id="fotogaleria" style="height:100vh;"></section>
 <section id="test" style="height:100vh;"></section>
