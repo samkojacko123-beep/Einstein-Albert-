@@ -1447,8 +1447,13 @@ section{
     }
 }
 .photoelectric-section{
+    position:relative;
     padding:180px 8%;
-    background:linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff);
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(59,130,246,.08), transparent 30%),
+        radial-gradient(circle at 85% 70%, rgba(168,85,247,.06), transparent 35%),
+        linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff);
 }
 .photoelectric-section ul li{
     margin-bottom:8px;
@@ -1483,6 +1488,7 @@ section{
 
 .examples-grid{
     display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
     gap:25px;
 }
 
@@ -2049,18 +2055,33 @@ section{
 
 </div>
 </section>
+<div class="career-transition">
+    <div class="career-line"></div>
+    <div class="career-glow"></div>
+
+    <div class="career-ring ring-1"></div>
+    <div class="career-ring ring-2"></div>
+    <div class="career-ring ring-3"></div>
+
+    <div class="career-formula cf1">hf</div>
+    <div class="career-formula cf2">Eₖ</div>
+    <div class="career-formula cf3">f₀</div>
+</div>
 <section id="fotoelektricky" class="photoelectric-section">
-    <div class="theory-box">
-    <h3> Čo je fotoelektrický jav?</h3>
+    <div class="career-header">
+    <span class="section-badge"> Fotoelektrický jav</span>
+    <h2>Fotoelektrický jav a Einsteinova rovnica</h2>
     <p>
-        Fotoelektrický jav je fyzikálny jav, pri ktorom sa z povrchu kovu
-        uvoľňujú elektróny po dopade elektromagnetického žiarenia
-        s dostatočne vysokou frekvenciou.
+        Preskúmaj princíp fotoefektu, podmienky jeho vzniku,
+        Einsteinovu rovnicu, odvodenie a riešené príklady.
     </p>
+</div>
+<div class="theory-box">
+    <h3> Úvod do fotoelektrického javu</h3>
 
     <p>
-        Einstein v roku 1905 vysvetlil, že svetlo neprenáša energiu spojito,
-        ale v malých balíčkoch energie nazývaných <strong>fotóny</strong>.
+        Svetlo neprenáša energiu spojito, ale v malých balíčkoch energie,
+        ktoré nazývame <strong>fotóny</strong>.
         Každý fotón nesie energiu:
     </p>
 
@@ -2072,14 +2093,35 @@ section{
     </p>
 
     <p>
-        Ak má fotón dostatočne veľkú energiu,
-        dokáže elektrón vytrhnúť z kovu.
-        Časť energie sa spotrebuje na uvoľnenie elektrónu
-        (výstupná práca) a zvyšok ostáva elektrónu
-        ako kinetická energia.
+        Fotoelektrický jav je jav, pri ktorom sa z povrchu kovu
+        uvoľňujú elektróny pôsobením elektromagnetického žiarenia.
     </p>
-</div>
 
+    <p>
+        Aby elektrón mohol opustiť povrch kovu,
+        energia fotónu musí byť aspoň rovná
+        <strong>výstupnej práci kovu W</strong>.
+    </p>
+
+    <div class="formula-main">hf ≥ W</div>
+
+    <p>
+        Minimálna frekvencia potrebná na vznik javu sa nazýva
+        <strong>prahová frekvencia</strong>.
+    </p>
+
+    <div class="formula-main">f₀ = W / h</div>
+
+    <p>
+        Ak platí:
+    </p>
+
+    <ul style="line-height:2; padding-left:20px; color:#475569;">
+        <li><strong>f &lt; f₀</strong> → fotoelektrický jav nenastane</li>
+        <li><strong>f = f₀</strong> → elektrón sa práve uvoľní</li>
+        <li><strong>f &gt; f₀</strong> → elektrón získa aj kinetickú energiu</li>
+    </ul>
+</div>
 <div class="derivation-box">
     <h3> Čo Einstein tvrdil?</h3>
     <p>
@@ -2106,33 +2148,54 @@ section{
 </div>
 
 <div class="derivation-box">
-    <h3> Odvodenie rovnice</h3>
+    <h3>Einsteinova rovnica fotoelektrického javu</h3>
 
     <p>
-        1. Energia jedného fotónu:
+        Einstein vysvetlil fotoelektrický jav pomocou
+        <strong>zákona zachovania energie</strong>.
+        Energia jedného dopadajúceho fotónu sa rozdelí na:
     </p>
-    <div class="formula-main">E = hf</div>
+
+    <ul style="line-height:2; padding-left:20px; color:#475569;">
+        <li>výstupnú prácu kovu <strong>W</strong></li>
+        <li>kinetickú energiu elektrónu <strong>E<sub>k</sub></strong></li>
+    </ul>
 
     <p>
-        2. Elektrón potrebuje minimálnu energiu na opustenie kovu:
+        Preto platí základná Einsteinova rovnica:
     </p>
-    <div class="formula-main">W</div>
+
+    <div class="formula-main">hf = W + E<sub>k</sub></div>
 
     <p>
-        3. Ak je energia fotónu väčšia než výstupná práca,
-        zvyšná energia sa zmení na kinetickú energiu:
+        Keďže kinetická energia elektrónu je:
     </p>
-    <div class="formula-main">E<sub>k</sub> = \(\frac{1}{2}mv^2\)</div>
+
+    <div class="formula-main">E<sub>k</sub> = ½mv<sup>2</sup></div>
 
     <p>
-        4. Zo zákona zachovania energie:
+        môžeme písať:
     </p>
-    <div class="formula-main">hf = W + ½mv²</div>
+
+    <div class="formula-main">hf = W + ½mv<sup>2</sup></div>
 
     <p>
-        5. Po úprave dostávame konečný vzťah:
+        Po úprave dostávame konečný tvar:
     </p>
+
     <div class="formula-main">E<sub>k</sub> = hf - W</div>
+
+    <p>
+        Ak použijeme prahovú frekvenciu:
+    </p>
+
+    <div class="formula-main">W = hf₀</div>
+
+    <p>
+        dostaneme ešte častejší školský tvar:
+    </p>
+
+    <div class="formula-main">E<sub>k</sub> = h(f - f₀)</div>
 </div>
 
 <div class="theory-box">
@@ -2158,11 +2221,13 @@ section{
         Namiesto frekvencie často používame medznú vlnovú dĺžku:
     </p>
 
-    <div class="formula-main">λ₀ = 1240 / W</div>
+    <div class="formula-main">λ₀ = hc / W</div>
+<p>
+    Tento vzťah platí pri použití jednotiek:
+    λ v nanometroch a W v elektrónvoltoch.
 
-    <p>
-        Ak má svetlo väčšiu vlnovú dĺžku,
-        energia fotónu je príliš malá na uvoľnenie elektrónu.
+     Ak má svetlo väčšiu vlnovú dĺžku,
+     energia fotónu je príliš malá na uvoľnenie elektrónu.
     </p>
 </div>
 
