@@ -1450,7 +1450,20 @@ section{
     padding:180px 8%;
     background:linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff);
 }
+.photoelectric-section ul li{
+    margin-bottom:8px;
+}
 
+.photoelectric-section h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.photoelectric-section p{
+    line-height:2;
+    color:#475569;
+    font-size:1.05rem;
+}
 .theory-box,.derivation-box,.example-card{
     background:rgba(255,255,255,.75);
     border:1px solid rgba(255,255,255,.85);
@@ -2037,52 +2050,151 @@ section{
 </div>
 </section>
 <section id="fotoelektricky" class="photoelectric-section">
-    <div class="career-header">
-        <span class="section-badge">⚡ Fotoelektrický jav</span>
-        <h2>Einsteinov fotoelektrický jav</h2>
-        <p>
-            Fotoelektrický jav je fyzikálny jav, pri ktorom dopadajúce svetlo
-            uvoľňuje elektróny z povrchu kovu.
-            Einstein vysvetlil, že svetlo sa skladá z fotónov,
-            ktoré nesú energiu úmernú frekvencii.
-        </p>
-    </div>
-
     <div class="theory-box">
-        <h3>Čo je fotoelektrický jav?</h3>
-        <p>
-            Ak na kov dopadá elektromagnetické žiarenie s dostatočne vysokou
-            frekvenciou, elektróny absorbujú energiu fotónu.
-            Časť energie sa spotrebuje na uvoľnenie elektrónu z kovu
-            (výstupná práca) a zvyšok sa zmení na kinetickú energiu elektrónu.
-        </p>
+    <h3>⚡ Čo je fotoelektrický jav?</h3>
+    <p>
+        Fotoelektrický jav je fyzikálny jav, pri ktorom sa z povrchu kovu
+        uvoľňujú elektróny po dopade elektromagnetického žiarenia
+        s dostatočne vysokou frekvenciou.
+    </p>
 
-        <div class="formula-main">hf = W + Ek</div>
+    <p>
+        Einstein v roku 1905 vysvetlil, že svetlo neprenáša energiu spojito,
+        ale v malých balíčkoch energie nazývaných <strong>fotóny</strong>.
+        Každý fotón nesie energiu:
+    </p>
 
-        <p>
-            kde:
-            <br>h – Planckova konštanta
-            <br>f – frekvencia
-            <br>W – výstupná práca
-            <br>Ek – kinetická energia elektrónu
-        </p>
-    </div>
+    <div class="formula-main">E = hf</div>
 
-    <div class="derivation-box">
-        <h3>Odvodenie rovnice</h3>
-        <p>
-            Energia fotónu je daná vzťahom E = hf.
-            Pri dopade na katódu sa táto energia rozdelí:
-        </p>
+    <p>
+        kde <strong>h</strong> je Planckova konštanta
+        a <strong>f</strong> je frekvencia žiarenia.
+    </p>
 
-        <div class="formula-main">hf = W + ½mv²</div>
+    <p>
+        Ak má fotón dostatočne veľkú energiu,
+        dokáže elektrón vytrhnúť z kovu.
+        Časť energie sa spotrebuje na uvoľnenie elektrónu
+        (výstupná práca) a zvyšok ostáva elektrónu
+        ako kinetická energia.
+    </p>
+</div>
 
-        <p>
-            Po odčítaní výstupnej práce dostávame kinetickú energiu elektrónu:
-        </p>
+<div class="derivation-box">
+    <h3>🧠 Čo Einstein tvrdil?</h3>
+    <p>
+        Klasická fyzika predpokladala,
+        že silnejšie svetlo znamená väčšiu energiu elektrónov.
+        Experimenty však ukázali, že rozhoduje
+        <strong>frekvencia svetla, nie intenzita</strong>.
+    </p>
 
-        <div class="formula-main">Ek = hf - W</div>
-    </div>
+    <p>
+        Einstein preto povedal:
+        <strong>jeden elektrón absorbuje energiu jedného fotónu</strong>.
+    </p>
+
+    <div class="formula-main">hf = W + E<sub>k</sub></div>
+
+    <p>
+        Táto rovnica hovorí:
+    </p>
+
+    <p>
+        <strong>energia fotónu = energia potrebná na uvoľnenie elektrónu + jeho kinetická energia</strong>
+    </p>
+</div>
+
+<div class="derivation-box">
+    <h3>📘 Lepšie odvodenie rovnice</h3>
+
+    <p>
+        1. Energia jedného fotónu:
+    </p>
+    <div class="formula-main">E = hf</div>
+
+    <p>
+        2. Elektrón potrebuje minimálnu energiu na opustenie kovu:
+    </p>
+    <div class="formula-main">W</div>
+
+    <p>
+        3. Ak je energia fotónu väčšia než výstupná práca,
+        zvyšná energia sa zmení na kinetickú energiu:
+    </p>
+    <div class="formula-main">E<sub>k</sub> = \(\frac{1}{2}mv^2\)</div>
+
+    <p>
+        4. Zo zákona zachovania energie:
+    </p>
+    <div class="formula-main">hf = W + ½mv²</div>
+
+    <p>
+        5. Po úprave dostávame konečný vzťah:
+    </p>
+    <div class="formula-main">E<sub>k</sub> = hf - W</div>
+</div>
+
+<div class="theory-box">
+    <h3>📍 Prahová frekvencia</h3>
+    <p>
+        Každý kov má svoju minimálnu frekvenciu,
+        pri ktorej ešte elektróny začnú vylietavať.
+        Táto frekvencia sa nazýva
+        <strong>prahová (hraničná) frekvencia</strong>.
+    </p>
+
+    <div class="formula-main">f₀ = W / h</div>
+
+    <p>
+        Ak je frekvencia menšia než f₀,
+        elektróny sa neuvoľnia bez ohľadu na intenzitu svetla.
+    </p>
+</div>
+
+<div class="theory-box">
+    <h3>🌈 Medzná vlnová dĺžka</h3>
+    <p>
+        Namiesto frekvencie často používame medznú vlnovú dĺžku:
+    </p>
+
+    <div class="formula-main">λ₀ = 1240 / W</div>
+
+    <p>
+        Ak má svetlo väčšiu vlnovú dĺžku,
+        energia fotónu je príliš malá na uvoľnenie elektrónu.
+    </p>
+</div>
+
+<div class="theory-box">
+    <h3>🚀 Prečo bol tento objav revolučný?</h3>
+    <p>
+        Tento jav dokázal, že svetlo sa správa aj ako častica,
+        nielen ako vlnenie.
+        Bol to jeden z najväčších dôkazov
+        vzniku kvantovej fyziky.
+    </p>
+
+    <p>
+        Práve za toto vysvetlenie získal Einstein Nobelovu cenu.
+    </p>
+</div>
+
+<div class="theory-box">
+    <h3>🔬 Využitie v praxi</h3>
+    <p>
+        Fotoelektrický jav sa dnes používa v:
+    </p>
+
+    <ul style="line-height:2; padding-left:20px; color:#475569;">
+        <li>solárnych paneloch</li>
+        <li>fotočlánkoch</li>
+        <li>automatických dverách</li>
+        <li>svetelných senzoroch</li>
+        <li>kamerách a CCD snímačoch</li>
+        <li>meraní intenzity svetla</li>
+    </ul>
+</div>
 
     <div class="examples-grid" id="examples-grid"></div>
 </section>
@@ -2129,6 +2241,7 @@ slider.addEventListener('touchstart', (e) => {
 });
 
 slider.addEventListener('touchmove', (e) => {
+    if(e.touches.length !== 1) return;
     const touchX = e.touches[0].pageX;
     const walk = (touchX - touchStartX) * 1.4;
     slider.scrollLeft = touchScrollLeft - walk;
@@ -2356,7 +2469,7 @@ W = 5,05 eV<br><br>
 Výsledok:<br>
 W = <strong>5,05 eV</strong>
 `
-`
+
 },
 {
 title:"9) f = 1,5×10¹⁵ Hz, Ek = 2,2 eV",
