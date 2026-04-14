@@ -1446,6 +1446,55 @@ section{
         font-size:2.6rem;
     }
 }
+.photoelectric-section{
+    padding:180px 8%;
+    background:linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff);
+}
+
+.theory-box,.derivation-box,.example-card{
+    background:rgba(255,255,255,.75);
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:32px;
+    padding:40px;
+    margin-bottom:40px;
+    backdrop-filter:blur(18px);
+    box-shadow:0 20px 50px rgba(37,99,235,.08);
+}
+
+.formula-main{
+    font-size:2.2rem;
+    font-weight:900;
+    color:#2563eb;
+    margin:25px 0;
+}
+
+.examples-grid{
+    display:grid;
+    gap:25px;
+}
+
+.example-card h3{
+    margin-bottom:16px;
+}
+
+.solution-btn{
+    margin-top:20px;
+    padding:14px 22px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.solution{
+    display:none;
+    margin-top:20px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(219,234,254,.45);
+}
 </style>
 </head>
 <body>
@@ -1987,7 +2036,56 @@ section{
 
 </div>
 </section>
-<section id="fotoelektricky" style="height:100vh;"></section>
+<section id="fotoelektricky" class="photoelectric-section">
+    <div class="career-header">
+        <span class="section-badge">⚡ Fotoelektrický jav</span>
+        <h2>Einsteinov fotoelektrický jav</h2>
+        <p>
+            Fotoelektrický jav je fyzikálny jav, pri ktorom dopadajúce svetlo
+            uvoľňuje elektróny z povrchu kovu.
+            Einstein vysvetlil, že svetlo sa skladá z fotónov,
+            ktoré nesú energiu úmernú frekvencii.
+        </p>
+    </div>
+
+    <div class="theory-box">
+        <h3>Čo je fotoelektrický jav?</h3>
+        <p>
+            Ak na kov dopadá elektromagnetické žiarenie s dostatočne vysokou
+            frekvenciou, elektróny absorbujú energiu fotónu.
+            Časť energie sa spotrebuje na uvoľnenie elektrónu z kovu
+            (výstupná práca) a zvyšok sa zmení na kinetickú energiu elektrónu.
+        </p>
+
+        <div class="formula-main">hf = W + Ek</div>
+
+        <p>
+            kde:
+            <br>h – Planckova konštanta
+            <br>f – frekvencia
+            <br>W – výstupná práca
+            <br>Ek – kinetická energia elektrónu
+        </p>
+    </div>
+
+    <div class="derivation-box">
+        <h3>Odvodenie rovnice</h3>
+        <p>
+            Energia fotónu je daná vzťahom E = hf.
+            Pri dopade na katódu sa táto energia rozdelí:
+        </p>
+
+        <div class="formula-main">hf = W + ½mv²</div>
+
+        <p>
+            Po odčítaní výstupnej práce dostávame kinetickú energiu elektrónu:
+        </p>
+
+        <div class="formula-main">Ek = hf - W</div>
+    </div>
+
+    <div class="examples-grid" id="examples-grid"></div>
+</section>
 <section id="ocenenia" style="height:100vh;"></section>
 <section id="zaujimavosti" style="height:100vh;"></section>
 <section id="fotogaleria" style="height:100vh;"></section>
@@ -2068,6 +2166,422 @@ careerRight.addEventListener('click', () => {
         left: 460,
         behavior: 'smooth'
     });
+});
+
+const examples = [
+{
+title:"1) Určte energiu fotónu s vlnovou dĺžkou 0,07 nm",
+task:"Použi vzťah E = 1240 / λ",
+result:"17,8 keV",
+steps:`
+Dané:<br>
+λ = 0,07 nm<br><br>
+
+Použijeme vzťah pre energiu fotónu:<br>
+E = hc / λ<br><br>
+
+V praxi používame jednoduchší vzťah:<br>
+E = 1240 / λ (eV)<br><br>
+
+Dosadenie:<br>
+E = 1240 / 0,07<br>
+E = 17714 eV<br><br>
+
+Prevod:<br>
+17714 eV = 17,8 keV<br><br>
+
+Výsledok:<br>
+E = 17,8 keV
+`
+},
+{
+title:"2) Určte výstupnú prácu z hraničnej frekvencie 1,8×10¹⁵ Hz",
+task:"Použi W = h·f",
+result:"7,45 eV",
+steps:`
+Dané:<br>
+f₀ = 1,8 × 10¹⁵ Hz<br><br>
+
+Použijeme Einsteinov vzťah pre výstupnú prácu:<br>
+W = h·f₀<br><br>
+
+kde:<br>
+h = 4,14 × 10⁻¹⁵ eV·s<br><br>
+
+Dosadenie:<br>
+W = 4,14 × 10⁻¹⁵ × 1,8 × 10¹⁵<br>
+W = 7,45 eV<br><br>
+
+Výsledok:<br>
+W = 7,45 eV
+`
+},
+{
+title:"3) Určte výstupnú prácu z hraničnej vlnovej dĺžky 325 nm",
+task:"Použi W = 1240 / λ",
+result:"3,82 eV",
+steps:`
+Dané:<br>
+λ₀ = 325 nm<br><br>
+
+Hľadáme výstupnú prácu kovu W.<br>
+Pri hraničnej vlnovej dĺžke platí, že fotón dodá elektrónu
+presne minimálnu energiu potrebnú na jeho uvoľnenie,
+čiže celá energia fotónu sa rovná výstupnej práci.<br><br>
+
+Použijeme vzťah:<br>
+W = hc / λ<br><br>
+
+V školských príkladoch používame praktický tvar:<br>
+W = 1240 / λ (eV)<br><br>
+
+Dosadenie:<br>
+W = 1240 / 325<br>
+W = 3,815 eV<br><br>
+
+Zaokrúhlenie:<br>
+W ≈ 3,82 eV<br><br>
+
+Výsledok:<br>
+Výstupná práca kovu je <strong>3,82 eV</strong>.
+`
+},
+{
+title:"4) Medzná vlnová dĺžka pri výstupnej práci 2 eV",
+task:"Použi λ = 1240 / W",
+result:"620 nm",
+steps:`
+Dané:<br>
+W = 2 eV<br><br>
+
+Hľadáme medznú vlnovú dĺžku λ₀.<br>
+Pri medznej vlnovej dĺžke má fotón práve takú energiu,
+aby uvoľnil elektrón z kovu.<br><br>
+
+Použijeme vzťah:<br>
+λ₀ = 1240 / W<br><br>
+
+Dosadenie:<br>
+λ₀ = 1240 / 2<br>
+λ₀ = 620 nm<br><br>
+
+Výsledok:<br>
+λ₀ = <strong>620 nm</strong>
+`
+},
+{
+title:"5) Hraničná frekvencia pri výstupnej práci 2,5 eV",
+task:"Použi f = W / h",
+result:"6,04 × 10¹⁴ Hz",
+steps:`
+Dané:<br>
+W = 2,5 eV<br><br>
+
+Použijeme vzťah:<br>
+f₀ = W / h<br><br>
+
+kde:<br>
+h = 4,14 × 10⁻¹⁵ eV·s<br><br>
+
+Dosadenie:<br>
+f₀ = 2,5 / (4,14×10⁻¹⁵)<br>
+f₀ = 6,04 × 10¹⁴ Hz<br><br>
+
+Výsledok:<br>
+f₀ = <strong>6,04 × 10¹⁴ Hz</strong>
+`
+},
+{
+title:"6) Sodík: energia fotónu 4,8 eV",
+task:"Použi Ek = E - W",
+result:"2,7 eV",
+steps:`
+Dané:<br>
+E = 4,8 eV<br>
+W = 2,1 eV<br><br>
+
+Použijeme Einsteinovu rovnicu:<br>
+Ek = E - W<br><br>
+
+Dosadenie:<br>
+Ek = 4,8 - 2,1<br>
+Ek = 2,7 eV<br><br>
+
+Výsledok:<br>
+Ek = <strong>2,7 eV</strong>
+`
+},
+{
+title:"7) Sodík: λ = 300 nm",
+task:"Najprv E = 1240 / λ, potom Ek = E - W",
+result:"2,03 eV",
+steps:`
+Dané:<br>
+λ = 300 nm<br>
+W = 2,1 eV<br><br>
+
+1. Energia fotónu:<br>
+E = 1240 / λ<br>
+E = 1240 / 300<br>
+E = 4,13 eV<br><br>
+
+2. Kinetická energia:<br>
+Ek = E - W<br>
+Ek = 4,13 - 2,1<br>
+Ek = 2,03 eV<br><br>
+
+Výsledok:<br>
+Ek ≈ <strong>2,0 eV</strong>
+`
+},
+{
+title:"8) f = 1,8×10¹⁵ Hz, Ek = 2,4 eV",
+task:"Použi W = hf - Ek",
+result:"5,05 eV",
+steps:`
+Dané:<br>
+f = 1,8 × 10¹⁵ Hz<br>
+Ek = 2,4 eV<br><br>
+
+1. Energia fotónu:<br>
+E = h·f<br>
+E = 4,14×10⁻¹⁵ × 1,8×10¹⁵<br>
+E = 7,45 eV<br><br>
+
+2. Výstupná práca:<br>
+W = E - Ek<br>
+W = 7,45 - 2,4<br>
+W = 5,05 eV<br><br>
+
+Výsledok:<br>
+W = <strong>5,05 eV</strong>
+`
+`
+},
+{
+title:"9) f = 1,5×10¹⁵ Hz, Ek = 2,2 eV",
+task:"Vypočítaj W, f₀ a λ₀",
+result:"4 eV; 9,67×10¹⁴ Hz; 310,1 nm",
+steps:`
+Dané:<br>
+f = 1,5 × 10¹⁵ Hz<br>
+Ek = 2,2 eV<br><br>
+
+1. Energia fotónu:<br>
+E = h·f = 6,2 eV<br><br>
+
+2. Výstupná práca:<br>
+W = E - Ek = 6,2 - 2,2 = 4 eV<br><br>
+
+3. Hraničná frekvencia:<br>
+f₀ = W / h<br>
+f₀ = 4 / (4,14×10⁻¹⁵)<br>
+f₀ = 9,67×10¹⁴ Hz<br><br>
+
+4. Medzná vlnová dĺžka:<br>
+λ₀ = 1240 / 4 = 310,1 nm<br><br>
+
+Výsledok:<br>
+W = 4 eV<br>
+f₀ = 9,67×10¹⁴ Hz<br>
+λ₀ = 310,1 nm
+`
+},
+{
+title:"10) f = 1,2×10¹⁵ Hz, v = 839 km/s",
+task:"Použi hf = W + ½mv²",
+result:"2,96 eV",
+steps:`
+Dané:<br>
+f = 1,2 × 10¹⁵ Hz<br>
+v = 839 km/s = 8,39×10⁵ m/s<br><br>
+
+1. Energia fotónu:<br>
+E = h·f = 4,97 eV<br><br>
+
+2. Kinetická energia:<br>
+Ek = ½mv²<br>
+Ek ≈ 2,01 eV<br><br>
+
+3. Výstupná práca:<br>
+W = E - Ek<br>
+W = 4,97 - 2,01<br>
+W = 2,96 eV<br><br>
+
+Výsledok:<br>
+W = <strong>2,96 eV</strong>
+`
+},
+{
+title:"11) v = 7,45×10⁵ m/s, f = 1,4×10¹⁵ Hz",
+task:"Použi hf = W + ½mv²",
+result:"4,22 eV",
+steps:`
+Dané:<br>
+v = 7,45×10⁵ m/s<br>
+f = 1,4×10¹⁵ Hz<br><br>
+
+1. Energia fotónu:<br>
+E = h·f = 5,80 eV<br><br>
+
+2. Kinetická energia:<br>
+Ek = ½mv² = 1,58 eV<br><br>
+
+3. Výstupná práca:<br>
+W = 5,80 - 1,58 = 4,22 eV<br><br>
+
+Výsledok:<br>
+W = <strong>4,22 eV</strong>
+`
+},
+{
+title:"12) Ek = 7,8 eV, λ = 125,7 nm",
+task:"Použi W = E - Ek",
+result:"2,07 eV",
+steps:`
+Dané:<br>
+Ek = 7,8 eV<br>
+λ = 125,7 nm<br><br>
+
+1. Energia fotónu:<br>
+E = 1240 / 125,7 = 9,87 eV<br><br>
+
+2. Výstupná práca:<br>
+W = E - Ek<br>
+W = 9,87 - 7,8<br>
+W = 2,07 eV<br><br>
+
+Výsledok:<br>
+W = <strong>2,07 eV</strong>
+`
+},
+{
+title:"13) Ek = 1,85 eV, W = 2,4 eV",
+task:"Najprv E = Ek + W, potom f a λ",
+result:"1,026×10¹⁵ Hz; 292,13 nm",
+steps:`
+Dané:<br>
+Ek = 1,85 eV<br>
+W = 2,4 eV<br><br>
+
+1. Energia fotónu:<br>
+E = Ek + W<br>
+E = 1,85 + 2,4 = 4,25 eV<br><br>
+
+2. Frekvencia:<br>
+f = E / h<br>
+f = 4,25 / (4,14×10⁻¹⁵)<br>
+f = 1,026×10¹⁵ Hz<br><br>
+
+3. Vlnová dĺžka:<br>
+λ = 1240 / 4,25 = 292,13 nm<br><br>
+
+Výsledok:<br>
+f = 1,026×10¹⁵ Hz<br>
+λ = 292,13 nm
+`
+},
+{
+title:"14) Ek = 1,7 eV, W = 3,47 eV",
+task:"Použi f = (Ek + W)/h",
+result:"1,25×10¹⁵ Hz",
+steps:`
+Dané:<br>
+Ek = 1,7 eV<br>
+W = 3,47 eV<br><br>
+
+1. Energia fotónu:<br>
+E = Ek + W<br>
+E = 1,7 + 3,47 = 5,17 eV<br><br>
+
+2. Frekvencia:<br>
+f = E / h<br>
+f = 5,17 / (4,14×10⁻¹⁵)<br>
+f = 1,25×10¹⁵ Hz<br><br>
+
+Výsledok:<br>
+f = <strong>1,25×10¹⁵ Hz</strong>
+`
+},
+{
+title:"15) E = 3,25 eV, W = 2,45 eV",
+task:"Najprv Ek, potom rýchlosť",
+result:"530,7 km/s",
+steps:`
+Dané:<br>
+E = 3,25 eV<br>
+W = 2,45 eV<br><br>
+
+1. Kinetická energia:<br>
+Ek = E - W = 0,80 eV<br><br>
+
+2. Prevod na jouly:<br>
+Ek = 0,80 × 1,602×10⁻¹⁹<br>
+Ek = 1,28×10⁻¹⁹ J<br><br>
+
+3. Rýchlosť:<br>
+v = √(2Ek/m)<br>
+v = √((2×1,28×10⁻¹⁹)/(9,11×10⁻³¹))<br>
+v = 5,307×10⁵ m/s<br><br>
+
+Výsledok:<br>
+v = <strong>530,7 km/s</strong>
+`
+},
+{
+title:"16) Sodík λ = 350 nm, W = 2,1 eV",
+task:"Najprv energia fotónu, potom rýchlosť",
+result:"714 km/s",
+steps:`
+Dané:<br>
+λ = 350 nm<br>
+W = 2,1 eV<br><br>
+
+1. Energia fotónu:<br>
+E = 1240 / 350 = 3,54 eV<br><br>
+
+2. Kinetická energia:<br>
+Ek = 3,54 - 2,1 = 1,44 eV<br><br>
+
+3. Prevod na jouly:<br>
+Ek = 1,44 × 1,602×10⁻¹⁹ = 2,31×10⁻¹⁹ J<br><br>
+
+4. Rýchlosť:<br>
+v = √(2Ek/m)<br>
+v = √((2×2,31×10⁻¹⁹)/(9,11×10⁻³¹))<br>
+v = 7,14×10⁵ m/s<br><br>
+
+Výsledok:<br>
+v = <strong>714 km/s</strong>
+`
+}
+];
+
+const examplesGrid = document.getElementById("examples-grid");
+
+examples.forEach(ex=>{
+    const card = document.createElement("div");
+    card.className = "example-card";
+
+    card.innerHTML = `
+        <h3>${ex.title}</h3>
+        <p>${ex.task}</p>
+        <button class="solution-btn">Zobraziť odpoveď</button>
+        <div class="solution">
+            <strong>Výsledok:</strong> ${ex.result}<br><br>
+            <strong>Postup:</strong><br>${ex.steps}
+        </div>
+    `;
+
+    const btn = card.querySelector(".solution-btn");
+    const sol = card.querySelector(".solution");
+
+    btn.addEventListener("click",()=>{
+        sol.style.display =
+            sol.style.display === "block" ? "none" : "block";
+    });
+
+    examplesGrid.appendChild(card);
 });
 </script>
 </body>
