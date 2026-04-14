@@ -1651,8 +1651,8 @@ section{
 /* divider before examples */
 .examples-section{
     position:relative;
-    margin-top:150px;
-    padding-top:130px;
+    margin-top:0;
+    padding-top:40px;
 }
 
 .examples-section::after{
@@ -2058,6 +2058,95 @@ section{
     right:18%;
     top:28%;
     font-size:1.8rem;
+}
+
+/* ===== INTERACTIVE FLIP FACTS ===== */
+.facts-premium-section{
+    position:relative;
+    padding:180px 8%;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(59,130,246,.12), transparent 30%),
+        radial-gradient(circle at 85% 70%, rgba(168,85,247,.10), transparent 35%),
+        linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff);
+}
+
+.flip-facts-grid{
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.flip-card{
+    height:320px;
+    perspective:1200px;
+    cursor:pointer;
+}
+
+.flip-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .8s;
+    transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-inner{
+    transform:rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+    position:absolute;
+    inset:0;
+    border-radius:34px;
+    backface-visibility:hidden;
+    padding:40px;
+
+    background:
+        radial-gradient(circle at top right, rgba(56,189,248,.10), transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.68));
+
+    border:1px solid rgba(255,255,255,.95);
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(37,99,235,.10),
+        0 0 30px rgba(56,189,248,.05);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.flip-front span{
+    font-size:3rem;
+    margin-bottom:24px;
+}
+
+.flip-front h3{
+    font-size:1.7rem;
+}
+
+.flip-back{
+    transform:rotateY(180deg);
+    font-size:1.08rem;
+    line-height:2;
+    color:#334155;
+}
+
+@media(max-width:1000px){
+    .flip-facts-grid{
+        grid-template-columns:1fr;
+    }
+}
+.flip-card:hover .flip-front,
+.flip-card:hover .flip-back{
+    box-shadow:
+        0 35px 90px rgba(37,99,235,.18),
+        0 0 35px rgba(56,189,248,.12);
 }
 </style>
 </head>
@@ -2964,7 +3053,151 @@ section{
         </div>
     </div>
 </section>
-<section id="zaujimavosti" style="height:100vh;"></section>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
+    <div class="universal-formula uf1">∞</div>
+    <div class="universal-formula uf2">E = mc²</div>
+    <div class="universal-formula uf3">hν</div>
+</div>
+
+<section id="zaujimavosti" class="facts-premium-section">
+    <div class="career-header">
+        <span class="section-badge"> Zaujímavosti</span>
+        <h2>Objav Einsteinove tajomstvá</h2>
+        <p>
+            Klikaj na interaktívne karty a odhaľuj fascinujúce fakty,
+            ktoré z Alberta Einsteina spravili nesmrteľnú legendu.
+        </p>
+    </div>
+
+    <div class="flip-facts-grid">
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>01</span>
+                <h3>Kreatívny génius</h3>
+            </div>
+            <div class="flip-back">
+                Väčšina Einsteinových objavov vznikla čisto cez
+                kreativitu, predstavivosť a mentálnu vizualizáciu.
+                Experimenty si často prehrával iba vo svojej hlave.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>02</span>
+                <h3>Pomalý začiatok</h3>
+            </div>
+            <div class="flip-back">
+                Ako dieťa sa veľmi pomaly učil rozprávať.
+                Neskôr sa však stal jedným z najväčších mysliteľov histórie.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>03</span>
+                <h3>Ukradnutý mozog</h3>
+            </div>
+            <div class="flip-back">
+                Patológ Thomas Harvey mu po smrti odobral mozog
+                a uchovával ho v nádobe približne 20 rokov.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>04</span>
+                <h3>Nobelova dohoda</h3>
+            </div>
+            <div class="flip-back">
+                Peniaze z Nobelovej ceny dostala jeho ex-manželka Mileva.
+                Bola to podmienka ich rozvodovej dohody.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>05</span>
+                <h3>Prezident Izraela</h3>
+            </div>
+            <div class="flip-back">
+                Einsteinovi bol ponúknutý post prezidenta Izraela.
+                S úctou ho odmietol.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>06</span>
+                <h3>Prijímačky</h3>
+            </div>
+            <div class="flip-back">
+                Na prvýkrát neuspel na prijímacích skúškach
+                na univerzitu a musel ich opakovať.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>07</span>
+                <h3>Nobel bez relativity</h3>
+            </div>
+            <div class="flip-back">
+                Nobelovu cenu nezískal za relativitu,
+                ale za vysvetlenie fotoelektrického javu.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>08</span>
+                <h3>Zlá pamäť</h3>
+            </div>
+            <div class="flip-back">
+                Bol známy tým, že si nepamätal mená,
+                dátumy ani telefónne čísla.
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <span>09</span>
+                <h3>Bez ponožiek</h3>
+            </div>
+            <div class="flip-back">
+                Einstein neznášal ponožky
+                a veľmi rád chodil úplne bez nich.
+            </div>
+        </div>
+</div>
+
+</div>
+
+    </div>
+</section>
 <section id="fotogaleria" style="height:100vh;"></section>
 <section id="test" style="height:100vh;"></section>
 <section id="zaver" style="height:100vh;"></section>
