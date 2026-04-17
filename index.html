@@ -2514,82 +2514,469 @@ section{
     }
 }
 
-.final-footer {
-    width: 100%;
-    background: linear-gradient(
-        135deg,
-        #07142f 0%,
-        #0b1f4d 50%,
-        #102a66 100%
-    );
-
-    padding: 60px 80px;
+html, body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.premium-footer {
     position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 90px 80px;
+    background:
+        linear-gradient(135deg,
+        #03122f 0%,
+        #08204f 45%,
+        #0d2f73 100%);
     overflow: hidden;
 }
 
-.final-footer-container {
-    width: 100%;
+.premium-footer-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right,
+        rgba(255,255,255,0.08),
+        transparent 45%);
+    pointer-events: none;
+}
+
+.premium-footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1600px;
+    margin: 0 auto;
+
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 60px;
+    gap: 80px;
 }
 
-.final-footer-left {
-    flex: 1.4;
+.premium-footer-main {
+    flex: 1.5;
 }
 
-.final-footer-left h2 {
-    font-size: 54px;
-    font-weight: 800;
+.footer-badge {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: #7db3ff;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.premium-footer-main h2 {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
     color: white;
-    margin-bottom: 20px;
-    line-height: 1.1;
+    margin-bottom: 30px;
 }
 
-.final-footer-left p {
-    font-size: 20px;
+.premium-footer-main p {
+    font-size: 22px;
     line-height: 1.8;
-    color: rgba(255,255,255,0.85);
-    max-width: 600px;
+    color: rgba(255,255,255,0.88);
+    max-width: 700px;
+    margin-bottom: 18px;
 }
 
-.final-footer-center,
-.final-footer-right {
-    flex: 1;
+.premium-footer-side {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 420px;
 }
 
-.final-footer-center h3,
-.final-footer-right h3 {
-    font-size: 28px;
+.footer-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
+}
+
+.footer-card h3 {
+    font-size: 30px;
     color: white;
     margin-bottom: 20px;
 }
 
-.final-footer-center p,
-.final-footer-right p {
-    font-size: 17px;
-    color: rgba(255,255,255,0.82);
-    line-height: 1.9;
-    margin-bottom: 8px;
-}
-
-.final-footer-right h4 {
-    font-size: 26px;
+.footer-card h4 {
+    font-size: 28px;
     color: #6ea8ff;
     margin-bottom: 15px;
 }
 
-.final-footer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: rgba(255,255,255,0.08);
+.footer-card p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+.scroll-top-btn{
+    position:fixed;
+    right:30px;
+    bottom:30px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    font-size:2rem;
+    text-decoration:none;
+    box-shadow:0 20px 50px rgba(37,99,235,.25);
+    z-index:999;
+    transition:.3s;
+}
+
+.scroll-top-btn:hover{
+    transform:translateY(-6px) scale(1.08);
+}
+/* ===== PDF EXPORT SECTION ===== */
+
+.pdf-export-section{
+    padding:160px 8%;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(59,130,246,.08), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(168,85,247,.06), transparent 35%),
+        linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff);
+}
+
+.pdf-btn{
+    margin-top:35px;
+    padding:20px 42px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+
+    font-size:1.1rem;
+    font-weight:800;
+    color:white;
+
+    background:
+        linear-gradient(135deg,#2563eb,#38bdf8);
+
+    box-shadow:
+        0 20px 50px rgba(37,99,235,.22);
+
+    transition:.35s ease;
+}
+
+.pdf-btn:hover{
+    transform:translateY(-6px) scale(1.03);
+
+    box-shadow:
+        0 30px 70px rgba(37,99,235,.30);
+}
+
+@media print {
+
+    .nav,
+    .scroll-top-btn,
+    .particles,
+    .glow1,
+    .glow2,
+    .glow3,
+    .timeline-btn,
+    .career-btn,
+    .memory-controls,
+    .pdf-btn {
+        display: none !important;
+    }
+
+    body{
+        background: white !important;
+    }
+
+    *{
+        box-shadow: none !important;
+        animation: none !important;
+    }
+
+}
+/* ===================================================== */
+/* ================= MOBILE RESPONSIVE ================= */
+/* ===================================================== */
+
+@media (max-width: 1024px){
+
+    .nav{
+        padding: 18px 30px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .nav-links a{
+        font-size: 0.95rem;
+    }
+
+    .hero{
+        grid-template-columns: 1fr;
+        padding: 140px 6% 80px;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .hero-text h1{
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+
+    .hero-text p{
+        font-size: 1.05rem;
+        line-height: 1.9;
+    }
+
+    .buttons{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .stats{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .hero-image{
+        margin: 0 auto;
+    }
+
+    .premium-footer-container{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .premium-footer-main h2{
+        font-size: 52px;
+    }
+
+    .premium-footer-side{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px){
+
+    html{
+        font-size: 15px;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .nav{
+        padding: 16px 20px;
+    }
+
+    .logo{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .nav-links{
+        gap: 10px;
+    }
+
+    .nav-links a{
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .hero{
+        padding: 130px 6% 70px;
+    }
+
+    .hero-text h1{
+        font-size: 3rem;
+    }
+
+    .hero-text p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .badge{
+        font-size: 0.8rem;
+    }
+
+    .section-badge{
+        font-size: 0.8rem;
+    }
+
+    .career-header h2,
+    .section-header h2,
+    .premium-footer-main h2{
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .career-header p,
+    .section-header p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .story-block,
+    .story-block.reverse{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .story-content h2{
+        font-size: 2rem;
+    }
+
+    .story-content p{
+        font-size: 1rem;
+        line-height: 1.9;
+    }
+
+    .fact-box{
+        width: 100%;
+    }
+
+    .theory-box,
+    .derivation-box,
+    .quiz-question,
+    .footer-card{
+        padding: 28px;
+    }
+
+    .formula-main{
+        font-size: 1.5rem;
+        word-break: break-word;
+    }
+
+    .gallery-grid,
+    .awards-grid,
+    .flip-facts-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card.wide,
+    .award-card.wide{
+        grid-column: span 1;
+    }
+
+    .gallery-card.large,
+    .award-card.large{
+        grid-row: span 1;
+    }
+
+    .memory-top-bar{
+        flex-direction: column;
+    }
+
+    #memoryGame{
+        grid-template-columns: repeat(2,1fr);
+        gap: 16px;
+    }
+
+    .memory-card{
+        height: 130px;
+    }
+
+    .memory-back{
+        font-size: 0.9rem;
+        padding: 14px;
+    }
+
+    .premium-footer{
+        padding: 70px 25px;
+    }
+
+    .premium-footer-main h2{
+        font-size: 2.4rem;
+    }
+
+    .premium-footer-main p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .scroll-top-btn{
+        width: 50px;
+        height: 50px;
+        right: 20px;
+        bottom: 20px;
+        font-size: 1.4rem;
+    }
+}
+
+
+@media (max-width: 480px){
+
+    .hero-text h1{
+        font-size: 2.4rem;
+    }
+
+    .buttons{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn{
+        width: 100%;
+        text-align: center;
+    }
+
+    .stats{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .career-header h2,
+    .section-header h2{
+        font-size: 1.8rem;
+    }
+
+    .story-content h2{
+        font-size: 1.6rem;
+    }
+
+    .formula-main{
+        font-size: 1.2rem;
+    }
+
+    #memoryGame{
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card{
+        height: 120px;
+    }
+
+    .premium-footer-main h2{
+        font-size: 1.8rem;
+    }
+
+    .footer-card h3{
+        font-size: 1.4rem;
+    }
+
+    .footer-card h4{
+        font-size: 1.2rem;
+    }
 }
 </style>
 </head>
@@ -4028,49 +4415,79 @@ section{
 
     </div>
 </div>
+</section>
 
-<footer class="final-footer">
+<section class="pdf-export-section">
 
-    <div class="final-footer-container">
+    <div class="career-header">
+        <span class="section-badge">Export</span>
+        <h2>Stiahnuť projekt ako PDF</h2>
+        <p>
+            Celú webstránku si môžeš uložiť aj ako PDF dokument
+            vhodný na odovzdanie, tlač alebo archiváciu.
+        </p>
 
-        <div class="final-footer-left">
+        <button class="pdf-btn" onclick="downloadPDF()">
+            📄 Stiahnuť ako PDF
+        </button>
+    </div>
+
+</section>
+<footer class="premium-footer">
+
+    <div class="premium-footer-overlay"></div>
+
+    <div class="premium-footer-container">
+
+        <div class="premium-footer-main">
+            <span class="footer-badge">Záver</span>
+
             <h2>Záverečné zhrnutie</h2>
 
             <p>
-                Albert Einstein nebol iba vedc.
+                Albert Einstein nebol iba vedec.
                 Bol symbolom odvahy myslieť inak,
                 klásť otázky a hľadať pravdu.
             </p>
+
+            <p>
+                Jeho objavy ovplyvnili modernú fyziku,
+                technológie aj chápanie reality.
+            </p>
         </div>
+      
 
-        <div class="final-footer-center">
-            <h3>Zdroje</h3>
+        <div class="premium-footer-side">
 
-            <p>Encyclopaedia Britannica</p>
-            <p>NobelPrize.org</p>
-            <p>NASA Science Archives</p>
-        </div>
+            <div class="footer-card">
+                <h3>Zdroje</h3>
 
-        <div class="final-footer-right">
-            <h3>Autor</h3>
+                <p>Encyclopaedia Britannica</p>
+                <p>NobelPrize.org</p>
+                <p>NASA Science Archives</p>
+                <p>Einstein Archives</p>
+            </div>
 
-            <h4>Samuel Jacko</h4>
+            <div class="footer-card">
+                <h3>Autor</h3>
 
-            <p>Gymnázium a OA</p>
-            <p>Trebišov</p>
+                <h4>Samuel Jacko</h4>
+
+                <p>Gymnázium a OA</p>
+                <p>Trebišov</p>
+            </div>
+
         </div>
 
     </div>
 
-
-
-
 </footer>
-</section>
 
-<div class="scroll">↓ scroll</div>
+
+
+
 <a href="#domov" class="scroll-top-btn">
-    ↑
+↑
 </a>
 <script>
 const slider = document.querySelector('.timeline-wrapper');
@@ -4832,7 +5249,9 @@ function showHint(){
 }
 
 restartMemoryGame();
-
+function downloadPDF(){
+    window.print();
+}
 </script>
 </body>
 </html>
