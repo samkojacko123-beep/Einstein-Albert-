@@ -2289,6 +2289,55 @@ section{
     animation:spinGear 60s linear infinite;
     pointer-events:none;
 }
+
+/* ===== TEST SECTION ===== */
+
+.quiz-form{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.quiz-question{
+    padding:35px;
+    border-radius:28px;
+    background:rgba(255,255,255,.75);
+    border:1px solid rgba(255,255,255,.85);
+    box-shadow:0 15px 40px rgba(37,99,235,.06);
+}
+
+.quiz-question h3{
+    font-size:1.35rem;
+    margin-bottom:24px;
+    color:#0f172a;
+}
+
+.quiz-question label{
+    display:block;
+    padding:14px 18px;
+    margin-bottom:12px;
+    border-radius:16px;
+    background:rgba(219,234,254,.35);
+    cursor:pointer;
+    transition:.3s;
+    line-height:1.6;
+}
+
+.quiz-question label:hover{
+    background:rgba(219,234,254,.6);
+    transform:translateX(4px);
+}
+
+.quiz-question input{
+    margin-right:12px;
+    transform:scale(1.15);
+}
+
+#quizResult{
+    display:none;
+    font-size:1.1rem;
+    font-weight:600;
+}
 </style>
 </head>
 <body>
@@ -3404,7 +3453,7 @@ section{
         <div class="gallery-card">
             <img src="./images/einstein_nobel.jpg" alt="Einstein Nobelova cena">
             <div class="gallery-overlay">
-                <h3>Nobelova sláva</h3>
+                <h3>Nobelova cena </h3>
                 <p>Moment svetového uznania a vedeckého triumfu.</p>
             </div>
         </div>
@@ -3413,7 +3462,7 @@ section{
             <img src="./images/einstein_smile.jpg" alt="Einstein úsmev">
             <div class="gallery-overlay">
                 <h3>Ľudská stránka</h3>
-                <p>Humor, jednoduchosť a výnimočná charizma.</p>
+                <p>Albert Einstein s jemným úsmevom a pokojnym pohľadom.</p>
             </div>
         </div>
 
@@ -3452,7 +3501,146 @@ section{
     </div>
 
 </section>
-<section id="test" style="height:100vh;"></section>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
+
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
+
+    <div class="universal-formula uf1">hν</div>
+    <div class="universal-formula uf2">Eₖ</div>
+    <div class="universal-formula uf3">f₀</div>
+</div>
+
+<section id="test" class="photoelectric-section">
+
+    <div class="career-header">
+        <span class="section-badge">Test vedomostí</span>
+        <h2>Over si svoje znalosti</h2>
+        <p>
+            Krátky interaktívny test z života Alberta Einsteina,
+            jeho vedeckej kariéry a fotoelektrického javu.
+            Niektoré otázky môžu mať jednu aj viac správnych odpovedí.
+        </p>
+    </div>
+
+    <div class="theory-box">
+
+        <form class="quiz-form" id="quizForm">
+
+            <!-- otázka 1 -->
+            <div class="quiz-question">
+                <h3>1. V ktorom roku získal Albert Einstein Nobelovu cenu?</h3>
+
+                <label><input type="checkbox" name="q1" value="a"> 1905</label>
+                <label><input type="checkbox" name="q1" value="b"> 1915</label>
+                <label><input type="checkbox" name="q1" value="c"> 1921</label>
+                <label><input type="checkbox" name="q1" value="d"> 1955</label>
+            </div>
+
+            <!-- otázka 2 -->
+            <div class="quiz-question">
+                <h3>2. Za ktorý objav získal Nobelovu cenu?</h3>
+
+                <label><input type="checkbox" name="q2" value="a"> Teória relativity</label>
+                <label><input type="checkbox" name="q2" value="b"> Fotoelektrický jav</label>
+                <label><input type="checkbox" name="q2" value="c"> Brownov pohyb</label>
+                <label><input type="checkbox" name="q2" value="d"> Gravitačné vlny</label>
+            </div>
+
+            <!-- otázka 3 -->
+            <div class="quiz-question">
+                <h3>3. Ktoré tvrdenia o fotoelektrickom jave sú správne?</h3>
+
+                <label><input type="checkbox" name="q3" value="a"> Svetlo sa správa aj ako častica</label>
+                <label><input type="checkbox" name="q3" value="b"> Rozhoduje iba intenzita svetla</label>
+                <label><input type="checkbox" name="q3" value="c"> Elektróny sa uvoľňujú z kovu</label>
+                <label><input type="checkbox" name="q3" value="d"> Existuje prahová frekvencia</label>
+            </div>
+
+            <!-- otázka 4 -->
+            <div class="quiz-question">
+                <h3>4. Ktorá rovnica vyjadruje Einsteinovu rovnicu fotoefektu?</h3>
+
+                <label><input type="checkbox" name="q4" value="a"> E = mc²</label>
+                <label><input type="checkbox" name="q4" value="b"> hf = W + Eₖ</label>
+                <label><input type="checkbox" name="q4" value="c"> F = ma</label>
+                <label><input type="checkbox" name="q4" value="d"> pV = nRT</label>
+            </div>
+
+            <!-- otázka 5 -->
+            <div class="quiz-question">
+                <h3>5. Kde Einstein pôsobil po odchode do USA?</h3>
+
+                <label><input type="checkbox" name="q5" value="a"> Harvard</label>
+                <label><input type="checkbox" name="q5" value="b"> Princeton</label>
+                <label><input type="checkbox" name="q5" value="c"> Oxford</label>
+                <label><input type="checkbox" name="q5" value="d"> MIT</label>
+            </div>
+
+            <!-- otázka 6 -->
+<div class="quiz-question">
+    <h3>6. V ktorom meste sa Albert Einstein narodil?</h3>
+
+    <label><input type="checkbox" name="q6" value="a"> Ulm</label>
+    <label><input type="checkbox" name="q6" value="b"> Berlín</label>
+    <label><input type="checkbox" name="q6" value="c"> Zürich</label>
+    <label><input type="checkbox" name="q6" value="d"> Praha</label>
+</div>
+
+<!-- otázka 7 -->
+<div class="quiz-question">
+    <h3>7. Ktoré tvrdenia o Einsteinovi sú správne?</h3>
+
+    <label><input type="checkbox" name="q7" value="a"> Bol prezidentom Izraela</label>
+    <label><input type="checkbox" name="q7" value="b"> Nemal rád ponožky</label>
+    <label><input type="checkbox" name="q7" value="c"> Nobelovu cenu získal za relativitu</label>
+    <label><input type="checkbox" name="q7" value="d"> Ako dieťa sa pomaly učil rozprávať</label>
+</div>
+
+<!-- otázka 8 -->
+<div class="quiz-question">
+    <h3>8. Čo vyjadruje rovnica E = mc²?</h3>
+
+    <label><input type="checkbox" name="q8" value="a"> Gravitačné zrýchlenie</label>
+    <label><input type="checkbox" name="q8" value="b"> Tlak plynu</label>
+    <label><input type="checkbox" name="q8" value="c"> Vzťah medzi energiou a hmotou</label>
+    <label><input type="checkbox" name="q8" value="d"> Zákon zachovania hybnosti</label>
+</div>
+
+<!-- otázka 9 -->
+<div class="quiz-question">
+    <h3>9. Kde sa dnes využíva fotoelektrický jav?</h3>
+
+    <label><input type="checkbox" name="q9" value="a"> Solárne panely</label>
+    <label><input type="checkbox" name="q9" value="b"> Spaľovacie motory</label>
+    <label><input type="checkbox" name="q9" value="c"> Svetelné senzory</label>
+    <label><input type="checkbox" name="q9" value="d"> Parné lokomotívy</label>
+</div>
+
+<!-- otázka 10 -->
+<div class="quiz-question">
+    <h3>10. Čo predstavuje prahová frekvencia f₀?</h3>
+
+    <label><input type="checkbox" name="q10" value="a"> Maximálnu rýchlosť elektrónu</label>
+    <label><input type="checkbox" name="q10" value="b"> Frekvenciu gravitačných vĺn</label>
+    <label><input type="checkbox" name="q10" value="c"> Intenzitu svetla</label>
+    <label><input type="checkbox" name="q10" value="d"> Minimálnu frekvenciu potrebnú na uvoľnenie elektrónu</label>
+</div>
+
+            <button type="button" class="solution-btn" onclick="checkQuiz()">
+                Vyhodnotiť test
+            </button>
+
+            <div id="quizResult" class="solution"></div>
+
+        </form>
+
+    </div>
+
+</section>
 <section id="zaver" style="height:100vh;"></section>
 
 <div class="scroll">↓ scroll</div>
@@ -3930,6 +4118,76 @@ card.innerHTML = `
 
     examplesGrid.appendChild(card);
 });
+
+const answers = {
+    q1: ["c"],
+    q2: ["b"],
+    q3: ["a", "c", "d"],
+    q4: ["b"],
+    q5: ["b"],
+    q6: ["a"],
+    q7: ["b", "d"],
+    q8: ["c"],
+    q9: ["a", "c"],
+    q10: ["d"]
+};
+
+function checkQuiz() {
+    let score = 0;
+    let total = Object.keys(answers).length;
+
+    for (let question in answers) {
+        const checked = [
+            ...document.querySelectorAll(`input[name="${question}"]:checked`)
+        ]
+        .map(el => el.value)
+        .sort();
+
+        const correct = answers[question].sort();
+
+        if (JSON.stringify(checked) === JSON.stringify(correct)) {
+            score++;
+        }
+    }
+
+    const result = document.getElementById("quizResult");
+    result.style.display = "block";
+
+    let message = "";
+    let grade = "";
+
+ if (score === 10) {
+    grade = "Výborne (100%)";
+        message = "Perfektné! Ovládaš Einsteinovu tematiku na výbornej úrovni.";
+    } 
+    else if (score >= 8) {
+        grade = "Veľmi dobre";
+        message = "Výborný výsledok! Máš veľmi silné znalosti.";
+    } 
+    else if (score >= 6) {
+        grade = "Dobre";
+        message = "Dobrá práca! Základy ovládaš veľmi slušne.";
+    } 
+    else if (score >= 4) {
+        grade = "Priemer";
+        message = "Nie je to zlé, ale odporúča sa ešte raz prejsť stránku.";
+    } 
+    else {
+        grade = "Slabšie";
+        message = "Odporúčame znova si preštudovať celý obsah webu.";
+    }
+
+    result.innerHTML = `
+        <strong>Tvoj výsledok:</strong> ${score} / ${total}<br><br>
+        <strong>Hodnotenie:</strong> ${grade}<br><br>
+        ${message}
+    `;
+
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
 </script>
 </body>
 </html>
