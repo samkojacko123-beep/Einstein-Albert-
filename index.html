@@ -2514,160 +2514,99 @@ section{
     }
 }
 
-/* TOTO VLOŽ ÚPLNE NA KONIEC CSS */
-
-.ultimate-footer{
-    width:100%;
-    padding:140px 8% 100px;
-
-    background:
-        radial-gradient(circle at 20% 20%, rgba(59,130,246,.10), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(37,99,235,.08), transparent 35%),
-        linear-gradient(
-            180deg,
-            #dbeafe 0%,
-            #c7dcff 20%,
-            #93c5fd 45%,
-            #3b82f6 75%,
-            #1d4ed8 100%
-        );
-
-    position:relative;
-    overflow:hidden;
+.ultimate-footer {
+    width: 100%;
+    background: #0b1f4d;
+    color: white;
+    padding: 120px 80px;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.ultimate-footer::before{
-    content:"";
-    position:absolute;
-    inset:0;
+.footer-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.12),
-            transparent 40%
-        );
-
-    pointer-events:none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
 }
 
-.footer-content{
-    max-width:1600px;
-    margin:0 auto;
-    position:relative;
-    z-index:2;
+.footer-left {
+    flex: 1.2;
 }
 
-.footer-top{
-    margin-bottom:70px;
+.footer-left h2 {
+    font-size: 64px;
+    font-weight: 800;
+    margin: 20px 0 30px;
+    line-height: 1.1;
+    color: white;
 }
 
-.footer-top h2{
-    font-size:4.2rem;
-    color:white;
-    margin-bottom:28px;
-    font-weight:900;
+.footer-left p {
+    font-size: 21px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+    max-width: 700px;
 }
 
-.footer-top p{
-    max-width:900px;
-    font-size:1.12rem;
-    line-height:2;
-    color:rgba(255,255,255,.92);
+.footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
-.footer-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
+.footer-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
 }
 
-.footer-box{
-    padding:45px;
-    border-radius:32px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.18),
-            rgba(255,255,255,.08)
-        );
-
-    border:1px solid rgba(255,255,255,.25);
-
-    backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.08);
+.footer-box h3 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: white;
 }
 
-.footer-box h3{
-    font-size:2rem;
-    margin-bottom:28px;
-    color:white;
+.footer-box h4 {
+    font-size: 28px;
+    color: #6ea8ff;
+    margin-bottom: 15px;
 }
 
-.footer-box h4{
-    font-size:1.6rem;
-    margin-bottom:14px;
-    color:#ffffff;
-    font-weight:800;
+.footer-box p,
+.footer-box li {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
 }
 
-.footer-box p{
-    color:rgba(255,255,255,.90);
-    line-height:1.8;
-    margin-bottom:8px;
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-box ul{
-    list-style:none;
-    padding:0;
-    margin:0;
+.footer-box li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.footer-box ul li{
-    padding:14px 0;
-    border-bottom:1px solid rgba(255,255,255,.18);
-    color:rgba(255,255,255,.92);
-    line-height:1.7;
-}
-
-.footer-note{
-    margin-top:30px;
-    padding:24px;
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.16),
-            rgba(255,255,255,.08)
-        );
-
-    border-left:4px solid white;
-
-    color:white;
-    line-height:1.9;
-}
-
-@media(max-width:1000px){
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-top h2{
-        font-size:2.6rem;
-    }
-
-    .ultimate-footer{
-        padding:100px 6%;
-    }
-
-    .footer-box{
-        padding:30px;
-    }
+.footer-note {
+    margin-top: 25px;
+    padding: 20px;
+    border-left: 4px solid #4f8cff;
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    line-height: 1.8;
 }
 </style>
 </head>
@@ -4107,14 +4046,11 @@ section{
     </div>
 </div>
 
-<!-- TOTO VLOŽ ÚPLNE NA KONIEC BODY -->
-<!-- tesne pred </body> -->
+<footer class="ultimate-footer">
 
-<footer id="zaver" class="ultimate-footer">
+    <div class="footer-container">
 
-    <div class="footer-content">
-
-        <div class="footer-top">
+        <div class="footer-left">
             <span class="section-badge">Záver</span>
             <h2>Záverečné zhrnutie</h2>
 
@@ -4130,7 +4066,7 @@ section{
             </p>
         </div>
 
-        <div class="footer-grid">
+        <div class="footer-right">
 
             <div class="footer-box">
                 <h3>Zdroje</h3>
@@ -4142,7 +4078,6 @@ section{
                     <li>Einstein Archives Online</li>
                     <li>ETH Zürich Historical Records</li>
                     <li>Wikipedia Commons</li>
-                    <li>Školské fyzikálne materiály</li>
                 </ul>
             </div>
 
@@ -4156,8 +4091,7 @@ section{
 
                 <div class="footer-note">
                     Táto webstránka bola vytvorená ako školský projekt
-                    zameraný na život, fotoelektrický jav, vedeckú kariéru a odkaz
-                    Alberta Einsteina.
+                    zameraný na život a vedecký odkaz Alberta Einsteina.
                 </div>
             </div>
 
@@ -4165,11 +4099,15 @@ section{
 
     </div>
 
+
+
 </footer>
 </section>
 
 <div class="scroll">↓ scroll</div>
-
+<a href="#domov" class="scroll-top-btn">
+    ↑
+</a>
 <script>
 const slider = document.querySelector('.timeline-wrapper');
 
@@ -4930,6 +4868,7 @@ function showHint(){
 }
 
 restartMemoryGame();
+
 </script>
 </body>
 </html>
