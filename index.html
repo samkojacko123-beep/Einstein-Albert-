@@ -2514,143 +2514,159 @@ section{
     }
 }
 
-/* VLOŽ ÚPLNE NA KONIEC CSS */
+/* TOTO VLOŽ ÚPLNE NA KONIEC CSS */
 
-.final-section{
-    padding:160px 8%;
+.ultimate-footer{
+    width:100%;
+    padding:140px 8% 100px;
+
     background:
-        radial-gradient(circle at 15% 20%, rgba(59,130,246,.08), transparent 30%),
-        radial-gradient(circle at 85% 70%, rgba(168,85,247,.06), transparent 35%),
-        linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff,#ffffff);
+        radial-gradient(circle at 20% 20%, rgba(59,130,246,.10), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(37,99,235,.08), transparent 35%),
+        linear-gradient(
+            180deg,
+            #dbeafe 0%,
+            #c7dcff 20%,
+            #93c5fd 45%,
+            #3b82f6 75%,
+            #1d4ed8 100%
+        );
+
+    position:relative;
+    overflow:hidden;
 }
 
-.final-container{
-    max-width:1500px;
-    margin:0 auto;
-    padding:70px;
-    border-radius:42px;
+.ultimate-footer::before{
+    content:"";
+    position:absolute;
+    inset:0;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,255,255,.92),
-            rgba(248,251,255,.88)
+            rgba(255,255,255,.12),
+            transparent 40%
         );
 
-    border:1px solid rgba(255,255,255,.95);
-
-    backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 30px 80px rgba(37,99,235,.08),
-        inset 0 1px 0 rgba(255,255,255,.7);
+    pointer-events:none;
 }
 
-.final-header{
-    margin-bottom:60px;
+.footer-content{
+    max-width:1600px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
 }
 
-.final-header h2{
-    font-size:3.8rem;
-    margin-bottom:24px;
-    color:#0f172a;
+.footer-top{
+    margin-bottom:70px;
 }
 
-.final-header p{
-    font-size:1.08rem;
-    line-height:2;
-    color:#475569;
+.footer-top h2{
+    font-size:4.2rem;
+    color:white;
+    margin-bottom:28px;
+    font-weight:900;
+}
+
+.footer-top p{
     max-width:900px;
+    font-size:1.12rem;
+    line-height:2;
+    color:rgba(255,255,255,.92);
 }
 
-.final-grid{
+.footer-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:40px;
-    align-items:start;
 }
 
-.final-card{
-    padding:40px;
-    border-radius:30px;
+.footer-box{
+    padding:45px;
+    border-radius:32px;
 
     background:
-        radial-gradient(circle at top right, rgba(56,189,248,.08), transparent 35%),
         linear-gradient(
             135deg,
-            rgba(255,255,255,.88),
-            rgba(255,255,255,.72)
+            rgba(255,255,255,.18),
+            rgba(255,255,255,.08)
         );
 
-    border:1px solid rgba(255,255,255,.95);
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
 
     box-shadow:
-        0 20px 50px rgba(37,99,235,.06);
-
-    backdrop-filter:blur(16px);
+        0 25px 60px rgba(0,0,0,.08);
 }
 
-.final-card h3{
+.footer-box h3{
     font-size:2rem;
-    margin-bottom:24px;
-    color:#0f172a;
+    margin-bottom:28px;
+    color:white;
 }
 
-.final-list{
+.footer-box h4{
+    font-size:1.6rem;
+    margin-bottom:14px;
+    color:#ffffff;
+    font-weight:800;
+}
+
+.footer-box p{
+    color:rgba(255,255,255,.90);
+    line-height:1.8;
+    margin-bottom:8px;
+}
+
+.footer-box ul{
     list-style:none;
     padding:0;
     margin:0;
 }
 
-.final-list li{
+.footer-box ul li{
     padding:14px 0;
-    border-bottom:1px solid rgba(148,163,184,.15);
-    color:#475569;
+    border-bottom:1px solid rgba(255,255,255,.18);
+    color:rgba(255,255,255,.92);
     line-height:1.7;
 }
 
-.author-box h4{
-    font-size:1.5rem;
-    color:#2563eb;
-    margin-bottom:12px;
-}
-
-.author-box p{
-    line-height:1.8;
-    color:#475569;
-    margin-bottom:8px;
-}
-
-.final-note{
+.footer-note{
     margin-top:30px;
     padding:24px;
-    border-radius:20px;
+    border-radius:22px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(219,234,254,.55),
-            rgba(255,255,255,.8)
+            rgba(255,255,255,.16),
+            rgba(255,255,255,.08)
         );
 
-    border-left:5px solid #2563eb;
+    border-left:4px solid white;
 
+    color:white;
     line-height:1.9;
-    color:#334155;
 }
 
 @media(max-width:1000px){
 
-    .final-grid{
+    .footer-grid{
         grid-template-columns:1fr;
     }
 
-    .final-header h2{
-        font-size:2.4rem;
+    .footer-top h2{
+        font-size:2.6rem;
     }
 
-    .final-container{
-        padding:40px;
+    .ultimate-footer{
+        padding:100px 6%;
+    }
+
+    .footer-box{
+        padding:30px;
     }
 }
 </style>
@@ -4091,14 +4107,14 @@ section{
     </div>
 </div>
 
- <!-- VYMAŽ CELÝ STARÝ ZÁVER -->
-<!-- a NAHRAD ho týmto -->
+<!-- TOTO VLOŽ ÚPLNE NA KONIEC BODY -->
+<!-- tesne pred </body> -->
 
-<section id="zaver" class="final-section">
+<footer id="zaver" class="ultimate-footer">
 
-    <div class="final-container">
+    <div class="footer-content">
 
-        <div class="final-header">
+        <div class="footer-top">
             <span class="section-badge">Záver</span>
             <h2>Záverečné zhrnutie</h2>
 
@@ -4114,12 +4130,12 @@ section{
             </p>
         </div>
 
-        <div class="final-grid">
+        <div class="footer-grid">
 
-            <div class="final-card">
+            <div class="footer-box">
                 <h3>Zdroje</h3>
 
-                <ul class="final-list">
+                <ul>
                     <li>Encyclopaedia Britannica</li>
                     <li>NobelPrize.org</li>
                     <li>NASA Science Archives</li>
@@ -4130,18 +4146,17 @@ section{
                 </ul>
             </div>
 
-            <div class="final-card">
+            <div class="footer-box">
                 <h3>Autor webstránky</h3>
 
-                <div class="author-box">
-                    <h4>Samuel Jacko</h4>
-                    <p>Gymnázium a Obchodná akadémia</p>
-                    <p>Komenského 32, Trebišov</p>
-                </div>
+                <h4>Samuel Jacko</h4>
 
-                <div class="final-note">
+                <p>Gymnázium a Obchodná akadémia</p>
+                <p>Komenského 32, Trebišov</p>
+
+                <div class="footer-note">
                     Táto webstránka bola vytvorená ako školský projekt
-                    zameraný na život, vedeckú kariéru a odkaz
+                    zameraný na život, fotoelektrický jav, vedeckú kariéru a odkaz
                     Alberta Einsteina.
                 </div>
             </div>
@@ -4150,7 +4165,7 @@ section{
 
     </div>
 
-
+</footer>
 </section>
 
 <div class="scroll">↓ scroll</div>
