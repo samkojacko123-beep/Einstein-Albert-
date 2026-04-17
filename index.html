@@ -2338,6 +2338,181 @@ section{
     font-size:1.1rem;
     font-weight:600;
 }
+.memory-ultra-wrapper{
+    margin-top:50px;
+}
+
+.memory-top-bar{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.memory-box{
+    flex:1;
+    min-width:220px;
+    padding:24px;
+    border-radius:26px;
+    background:
+        radial-gradient(circle at top right, rgba(56,189,248,.10), transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.70));
+    border:1px solid rgba(255,255,255,.95);
+    backdrop-filter:blur(20px);
+    box-shadow:
+        0 20px 50px rgba(37,99,235,.08),
+        inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+.memory-box h4{
+    font-size:.95rem;
+    color:#2563eb;
+    margin-bottom:10px;
+    font-weight:800;
+}
+
+.memory-box span{
+    font-size:2rem;
+    font-weight:900;
+    color:#0f172a;
+}
+
+#memoryGame{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    perspective:1500px;
+}
+
+.memory-card{
+    position:relative;
+    height:170px;
+    cursor:pointer;
+    transform-style:preserve-3d;
+    transition:transform .8s cubic-bezier(.4,.2,.2,1);
+}
+
+.memory-card.flipped{
+    transform:rotateY(180deg);
+}
+
+.memory-face{
+    position:absolute;
+    inset:0;
+    border-radius:30px;
+    backface-visibility:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    text-align:center;
+    font-weight:800;
+    user-select:none;
+    overflow:hidden;
+}
+
+.memory-front{
+    background:
+        radial-gradient(circle at top right, rgba(56,189,248,.14), transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.72));
+    border:1px solid rgba(255,255,255,.95);
+    box-shadow:
+        0 25px 60px rgba(37,99,235,.10),
+        0 0 25px rgba(56,189,248,.08);
+    font-size:2.2rem;
+    color:#2563eb;
+}
+
+.memory-front::before{
+    content:"⚛";
+    position:absolute;
+    font-size:5rem;
+    opacity:.08;
+    right:15px;
+    bottom:-5px;
+}
+
+.memory-back{
+    transform:rotateY(180deg);
+    background:
+        linear-gradient(135deg,#2563eb,#38bdf8,#60a5fa);
+    color:white;
+    font-size:1.15rem;
+    line-height:1.6;
+    box-shadow:
+        0 30px 70px rgba(37,99,235,.24);
+}
+
+.memory-card:hover{
+    transform:translateY(-8px);
+}
+
+.memory-card.flipped:hover{
+    transform:rotateY(180deg) translateY(-8px);
+}
+
+.memory-card.matched .memory-back{
+    background:
+        linear-gradient(135deg,#16a34a,#22c55e,#4ade80);
+    box-shadow:
+        0 30px 70px rgba(34,197,94,.28);
+}
+
+.memory-controls{
+    display:flex;
+    gap:18px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.memory-btn{
+    padding:16px 26px;
+    border:none;
+    border-radius:18px;
+    cursor:pointer;
+    font-weight:800;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.memory-btn.primary{
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+}
+
+.memory-btn.secondary{
+    background:rgba(255,255,255,.8);
+    border:1px solid rgba(255,255,255,.9);
+    color:#0f172a;
+}
+
+.memory-btn:hover{
+    transform:translateY(-4px);
+}
+
+#memoryResult{
+    display:none;
+    margin-top:40px;
+    padding:35px;
+    border-radius:30px;
+    background:
+        linear-gradient(135deg, rgba(219,234,254,.55), rgba(255,255,255,.8));
+    border-left:6px solid #2563eb;
+    line-height:2;
+    box-shadow:0 20px 50px rgba(37,99,235,.08);
+    font-size:1.08rem;
+}
+
+@media(max-width:1000px){
+    #memoryGame{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .memory-card{
+        height:150px;
+    }
+}
 </style>
 </head>
 <body>
@@ -3641,7 +3816,178 @@ section{
     </div>
 
 </section>
-<section id="zaver" style="height:100vh;"></section>
+<div class="universal-divider">
+    <div class="universal-divider-line"></div>
+    <div class="universal-divider-glow"></div>
+
+    <div class="universal-circle uc1"></div>
+    <div class="universal-circle uc2"></div>
+    <div class="universal-circle uc3"></div>
+
+    <div class="universal-formula uf1">E = mc²</div>
+    <div class="universal-formula uf2">∞</div>
+    <div class="universal-formula uf3">hν</div>
+</div>
+
+<section id="zaver" class="photoelectric-section">
+
+    <div class="career-header">
+        <span class="section-badge">Záver</span>
+        <h2>Einsteinov odkaz pre budúcnosť</h2>
+        <p>
+            Posledná kapitola tejto webstránky patrí myšlienkam,
+            odkazu a inšpirácii, ktorú Albert Einstein zanechal svetu.
+        </p>
+    </div>
+
+    <!-- CITÁTY -->
+    <div class="theory-box">
+        <h3>10 najslávnejších Einsteinových citátov</h3>
+
+        <div class="flip-facts-grid">
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>01</span><h3>Predstavivosť</h3></div>
+                <div class="flip-back">„Predstavivosť je dôležitejšia ako vedomosti.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>02</span><h3>Tajomno</h3></div>
+                <div class="flip-back">„Najkrajší zážitok je tajomno. Je zdrojom každej pravej vedy.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>03</span><h3>Chyby</h3></div>
+                <div class="flip-back">„Kto nikdy neurobil chybu, nikdy neskúsil nič nové.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>04</span><h3>Otázky</h3></div>
+                <div class="flip-back">„Dôležité je neprestať sa pýtať.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>05</span><h3>Život</h3></div>
+                <div class="flip-back">„Život je ako jazda na bicykli. Aby si udržal rovnováhu, musíš sa hýbať.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>06</span><h3>Jednoduchosť</h3></div>
+                <div class="flip-back">„Ak to nevieš vysvetliť jednoducho, nerozumieš tomu dostatočne dobre.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>07</span><h3>Úspech</h3></div>
+                <div class="flip-back">„Nesnaž sa byť úspešný. Snaž sa byť hodnotný.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>08</span><h3>Pokoj</h3></div>
+                <div class="flip-back">„Pokoj nemožno udržať silou. Dá sa dosiahnuť len porozumením.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>09</span><h3>Logika</h3></div>
+                <div class="flip-back">„Logika ťa dostane z bodu A do bodu B. Predstavivosť ťa dostane všade.“</div>
+            </div></div>
+
+            <div class="flip-card"><div class="flip-inner">
+                <div class="flip-front"><span>10</span><h3>Budúcnosť</h3></div>
+                <div class="flip-back">„Budúcnosť patrí tým, ktorí nikdy neprestanú myslieť.“</div>
+            </div></div>
+
+        </div>
+    </div>
+
+   <div class="theory-box">
+    <h3>Einstein Quantum Memory Challenge — ULTRA PREMIUM</h3>
+
+    <p>
+        Prémiová pamäťová hra.
+        Nájdeš všetky dvojice Einsteinových symbolov?
+        Čím menej ťahov a kratší čas, tým lepší výsledok.
+    </p>
+
+    <div class="memory-ultra-wrapper">
+
+        <div class="memory-top-bar">
+
+            <div class="memory-box">
+                <h4>Ťahy</h4>
+                <span id="moveCounter">0</span>
+            </div>
+
+            <div class="memory-box">
+                <h4>Čas</h4>
+                <span id="timeCounter">0</span>
+            </div>
+
+            <div class="memory-box">
+                <h4>Dvojice</h4>
+                <span id="pairCounter">0 / 8</span>
+            </div>
+
+            <div class="memory-box">
+                <h4>Skóre</h4>
+                <span id="scoreCounter">1000</span>
+            </div>
+
+        </div>
+
+        <div id="memoryGame"></div>
+
+        <div class="memory-controls">
+            <button class="memory-btn primary" onclick="restartMemoryGame()">
+                Reštartovať hru
+            </button>
+
+            <button class="memory-btn secondary" onclick="showHint()">
+                Nápoveda
+            </button>
+        </div>
+
+        <div id="memoryResult"></div>
+
+    </div>
+</div>
+
+    <!-- INFO -->
+    <div class="theory-box">
+        <h3>Záverečné zhrnutie</h3>
+
+        <p>
+            Albert Einstein nebol iba vedec.
+            Bol symbolom odvahy myslieť inak,
+            klásť si otázky a hľadať pravdu.
+        </p>
+
+        <p>
+            Jeho objavy ovplyvnili modernú fyziku,
+            technológie, vesmírny výskum aj samotné chápanie reality.
+        </p>
+
+        <h3>Zdroje</h3>
+
+        <p style="line-height:2;">
+            • Encyclopaedia Britannica<br>
+            • NobelPrize.org<br>
+            • NASA Science Archives<br>
+            • Einstein Archives Online<br>
+            • ETH Zürich Historical Records<br>
+            • Wikipedia Commons<br>
+            • školské fyzikálne materiály
+        </p>
+
+        <h3>Autor webstránky</h3>
+
+        <p style="line-height:2;">
+            <strong>Samuel Jacko</strong><br>
+            Gymnázium a Obchodná akadémia<br>
+            Komenského 32, Trebišov
+        </p>
+    </div>
+
+</section>
 
 <div class="scroll">↓ scroll</div>
 
@@ -4188,6 +4534,223 @@ function checkQuiz() {
         block: "center"
     });
 }
+
+let symbols = [
+    "E = mc²",
+    "Relativita",
+    "Princeton",
+    "1921",
+    "hν",
+    "∞",
+    "Fotoefekt",
+    "Nobel",
+    "E = mc²",
+    "Relativita",
+    "Princeton",
+    "1921",
+    "hν",
+    "∞",
+    "Fotoefekt",
+    "Nobel"
+];
+
+const game = document.getElementById("memoryGame");
+const result = document.getElementById("memoryResult");
+
+const moveCounter = document.getElementById("moveCounter");
+const timeCounter = document.getElementById("timeCounter");
+const pairCounter = document.getElementById("pairCounter");
+const scoreCounter = document.getElementById("scoreCounter");
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+
+let moves = 0;
+let pairs = 0;
+let seconds = 0;
+let score = 1000;
+let timer;
+let started = false;
+
+function startTimer(){
+    if(started) return;
+
+    started = true;
+
+    timer = setInterval(() => {
+        seconds++;
+        timeCounter.textContent = seconds;
+
+        if(score > 0){
+            score -= 2;
+            scoreCounter.textContent = score;
+        }
+    }, 1000);
+}
+
+function shuffle(array){
+    return [...array].sort(() => Math.random() - 0.5);
+}
+
+function updateUI(){
+    moveCounter.textContent = moves;
+    pairCounter.textContent = `${pairs} / 8`;
+    scoreCounter.textContent = score;
+}
+
+function createBoard(){
+    game.innerHTML = "";
+    result.style.display = "none";
+
+    const shuffled = shuffle(symbols);
+
+    shuffled.forEach(symbol => {
+        const card = document.createElement("div");
+        card.className = "memory-card";
+        card.dataset.value = symbol;
+        card.dataset.matched = "false";
+
+        card.innerHTML = `
+            <div class="memory-face memory-front">?</div>
+            <div class="memory-face memory-back">${symbol}</div>
+        `;
+
+        card.addEventListener("click", () => flipCard(card));
+
+        game.appendChild(card);
+    });
+}
+
+function flipCard(card){
+    if(
+        lockBoard ||
+        card === firstCard ||
+        card.dataset.matched === "true"
+    ) return;
+
+    startTimer();
+
+    card.classList.add("flipped");
+
+    if(!firstCard){
+        firstCard = card;
+        return;
+    }
+
+    secondCard = card;
+    moves++;
+    score -= 10;
+    updateUI();
+    lockBoard = true;
+
+    if(firstCard.dataset.value === secondCard.dataset.value){
+        firstCard.dataset.matched = "true";
+        secondCard.dataset.matched = "true";
+
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+
+        pairs++;
+        score += 80;
+        updateUI();
+
+        resetTurn();
+
+        if(pairs === 8){
+            finishGame();
+        }
+
+    } else {
+        setTimeout(() => {
+            firstCard.classList.remove("flipped");
+            secondCard.classList.remove("flipped");
+            resetTurn();
+        }, 1000);
+    }
+}
+
+function resetTurn(){
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+}
+
+function finishGame(){
+    clearInterval(timer);
+
+    let rank = "";
+
+    if(score >= 1200) rank = "🧠 EINSTEIN LEVEL";
+    else if(score >= 900) rank = "⚛ MASTER LEVEL";
+    else if(score >= 700) rank = "🚀 EXCELLENT";
+    else if(score >= 500) rank = "✨ VERY GOOD";
+    else rank = "💡 GOOD JOB";
+
+    result.style.display = "block";
+    result.innerHTML = `
+        <strong>Gratulujem!</strong><br><br>
+
+        Dokončil si Einstein Quantum Challenge.<br><br>
+
+        ${rank}<br><br>
+
+        🎯 Ťahy: <strong>${moves}</strong><br>
+        ⏱ Čas: <strong>${seconds}s</strong><br>
+        🏆 Finálne skóre: <strong>${score}</strong><br><br>
+
+        Einstein by bol na teba skutočne hrdý.
+    `;
+
+    result.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+}
+
+function restartMemoryGame(){
+    clearInterval(timer);
+
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+
+    moves = 0;
+    pairs = 0;
+    seconds = 0;
+    score = 1000;
+    started = false;
+
+    timeCounter.textContent = 0;
+    updateUI();
+
+    createBoard();
+}
+
+function showHint(){
+    const unmatched = [
+        ...document.querySelectorAll(".memory-card")
+    ].filter(card => card.dataset.matched !== "true");
+
+    if(unmatched.length < 2) return;
+
+    const preview = unmatched.slice(0, 2);
+
+    preview.forEach(card => card.classList.add("flipped"));
+
+    setTimeout(() => {
+        preview.forEach(card => {
+            if(card.dataset.matched !== "true"){
+                card.classList.remove("flipped");
+            }
+        });
+    }, 1200);
+
+    score -= 50;
+    updateUI();
+}
+
+restartMemoryGame();
 </script>
 </body>
 </html>
