@@ -2514,99 +2514,82 @@ section{
     }
 }
 
-.ultimate-footer {
+.final-footer {
     width: 100%;
-    background: #0b1f4d;
-    color: white;
-    padding: 120px 80px;
-    margin-top: 0;
+    background: linear-gradient(
+        135deg,
+        #07142f 0%,
+        #0b1f4d 50%,
+        #102a66 100%
+    );
+
+    padding: 60px 80px;
+    margin: 0;
     position: relative;
     overflow: hidden;
 }
 
-.footer-container {
+.final-footer-container {
     width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 80px;
+    gap: 60px;
 }
 
-.footer-left {
-    flex: 1.2;
+.final-footer-left {
+    flex: 1.4;
 }
 
-.footer-left h2 {
-    font-size: 64px;
+.final-footer-left h2 {
+    font-size: 54px;
     font-weight: 800;
-    margin: 20px 0 30px;
-    line-height: 1.1;
     color: white;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-.footer-left p {
-    font-size: 21px;
+.final-footer-left p {
+    font-size: 20px;
     line-height: 1.8;
     color: rgba(255,255,255,0.85);
-    margin-bottom: 20px;
-    max-width: 700px;
+    max-width: 600px;
 }
 
-.footer-right {
+.final-footer-center,
+.final-footer-right {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
 }
 
-.footer-box {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 24px;
-    padding: 35px;
-    backdrop-filter: blur(10px);
-}
-
-.footer-box h3 {
-    font-size: 30px;
-    margin-bottom: 25px;
-    color: white;
-}
-
-.footer-box h4 {
+.final-footer-center h3,
+.final-footer-right h3 {
     font-size: 28px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.final-footer-center p,
+.final-footer-right p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.9;
+    margin-bottom: 8px;
+}
+
+.final-footer-right h4 {
+    font-size: 26px;
     color: #6ea8ff;
     margin-bottom: 15px;
 }
 
-.footer-box p,
-.footer-box li {
-    font-size: 18px;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.85);
-}
-
-.footer-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-box li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.footer-note {
-    margin-top: 25px;
-    padding: 20px;
-    border-left: 4px solid #4f8cff;
-    background: rgba(255,255,255,0.05);
-    border-radius: 14px;
-    line-height: 1.8;
+.final-footer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
 }
 </style>
 </head>
@@ -4046,58 +4029,39 @@ section{
     </div>
 </div>
 
-<footer class="ultimate-footer">
+<footer class="final-footer">
 
-    <div class="footer-container">
+    <div class="final-footer-container">
 
-        <div class="footer-left">
-            <span class="section-badge">Záver</span>
+        <div class="final-footer-left">
             <h2>Záverečné zhrnutie</h2>
 
             <p>
-                Albert Einstein nebol iba vedec.
+                Albert Einstein nebol iba vedc.
                 Bol symbolom odvahy myslieť inak,
-                klásť si otázky a hľadať pravdu.
-            </p>
-
-            <p>
-                Jeho objavy ovplyvnili modernú fyziku,
-                technológie, vesmírny výskum aj samotné chápanie reality.
+                klásť otázky a hľadať pravdu.
             </p>
         </div>
 
-        <div class="footer-right">
+        <div class="final-footer-center">
+            <h3>Zdroje</h3>
 
-            <div class="footer-box">
-                <h3>Zdroje</h3>
+            <p>Encyclopaedia Britannica</p>
+            <p>NobelPrize.org</p>
+            <p>NASA Science Archives</p>
+        </div>
 
-                <ul>
-                    <li>Encyclopaedia Britannica</li>
-                    <li>NobelPrize.org</li>
-                    <li>NASA Science Archives</li>
-                    <li>Einstein Archives Online</li>
-                    <li>ETH Zürich Historical Records</li>
-                    <li>Wikipedia Commons</li>
-                </ul>
-            </div>
+        <div class="final-footer-right">
+            <h3>Autor</h3>
 
-            <div class="footer-box">
-                <h3>Autor webstránky</h3>
+            <h4>Samuel Jacko</h4>
 
-                <h4>Samuel Jacko</h4>
-
-                <p>Gymnázium a Obchodná akadémia</p>
-                <p>Komenského 32, Trebišov</p>
-
-                <div class="footer-note">
-                    Táto webstránka bola vytvorená ako školský projekt
-                    zameraný na život a vedecký odkaz Alberta Einsteina.
-                </div>
-            </div>
-
+            <p>Gymnázium a OA</p>
+            <p>Trebišov</p>
         </div>
 
     </div>
+
 
 
 
