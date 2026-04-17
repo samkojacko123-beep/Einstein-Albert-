@@ -2524,12 +2524,18 @@ html, body {
     position: relative;
     width: 100%;
     margin: 0;
-    padding: 90px 80px;
+    padding: 120px 80px 140px;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
     background:
         linear-gradient(135deg,
         #03122f 0%,
         #08204f 45%,
         #0d2f73 100%);
+
     overflow: hidden;
 }
 
@@ -2643,7 +2649,7 @@ html, body {
 /* ===== PDF EXPORT SECTION ===== */
 
 .pdf-export-section{
-    padding:160px 8%;
+    padding:120px 8% 0;
     text-align:center;
 
     background:
@@ -2977,6 +2983,19 @@ html, body {
     .footer-card h4{
         font-size: 1.2rem;
     }
+}
+body.printing {
+    overflow: visible !important;
+}
+
+body.printing .scroll-top-btn,
+body.printing .particles,
+body.printing .glow1,
+body.printing .glow2,
+body.printing .glow3,
+body.printing .timeline-btn,
+body.printing .career-btn {
+    display: none !important;
 }
 </style>
 </head>
@@ -5249,8 +5268,17 @@ function showHint(){
 }
 
 restartMemoryGame();
-function downloadPDF(){
-    window.print();
+function downloadPDF() {
+    document.body.classList.add("printing");
+
+    setTimeout(() => {
+        window.print();
+
+        setTimeout(() => {
+            document.body.classList.remove("printing");
+        }, 1000);
+
+    }, 300);
 }
 </script>
 </body>
