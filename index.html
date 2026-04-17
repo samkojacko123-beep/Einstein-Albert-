@@ -2513,6 +2513,146 @@ section{
         height:150px;
     }
 }
+
+/* VLOŽ ÚPLNE NA KONIEC CSS */
+
+.final-section{
+    padding:160px 8%;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(59,130,246,.08), transparent 30%),
+        radial-gradient(circle at 85% 70%, rgba(168,85,247,.06), transparent 35%),
+        linear-gradient(180deg,#ffffff,#f8fbff,#eef6ff,#ffffff);
+}
+
+.final-container{
+    max-width:1500px;
+    margin:0 auto;
+    padding:70px;
+    border-radius:42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.92),
+            rgba(248,251,255,.88)
+        );
+
+    border:1px solid rgba(255,255,255,.95);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(37,99,235,.08),
+        inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+.final-header{
+    margin-bottom:60px;
+}
+
+.final-header h2{
+    font-size:3.8rem;
+    margin-bottom:24px;
+    color:#0f172a;
+}
+
+.final-header p{
+    font-size:1.08rem;
+    line-height:2;
+    color:#475569;
+    max-width:900px;
+}
+
+.final-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:start;
+}
+
+.final-card{
+    padding:40px;
+    border-radius:30px;
+
+    background:
+        radial-gradient(circle at top right, rgba(56,189,248,.08), transparent 35%),
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.88),
+            rgba(255,255,255,.72)
+        );
+
+    border:1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 20px 50px rgba(37,99,235,.06);
+
+    backdrop-filter:blur(16px);
+}
+
+.final-card h3{
+    font-size:2rem;
+    margin-bottom:24px;
+    color:#0f172a;
+}
+
+.final-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.final-list li{
+    padding:14px 0;
+    border-bottom:1px solid rgba(148,163,184,.15);
+    color:#475569;
+    line-height:1.7;
+}
+
+.author-box h4{
+    font-size:1.5rem;
+    color:#2563eb;
+    margin-bottom:12px;
+}
+
+.author-box p{
+    line-height:1.8;
+    color:#475569;
+    margin-bottom:8px;
+}
+
+.final-note{
+    margin-top:30px;
+    padding:24px;
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(219,234,254,.55),
+            rgba(255,255,255,.8)
+        );
+
+    border-left:5px solid #2563eb;
+
+    line-height:1.9;
+    color:#334155;
+}
+
+@media(max-width:1000px){
+
+    .final-grid{
+        grid-template-columns:1fr;
+    }
+
+    .final-header h2{
+        font-size:2.4rem;
+    }
+
+    .final-container{
+        padding:40px;
+    }
+}
 </style>
 </head>
 <body>
@@ -3951,41 +4091,65 @@ section{
     </div>
 </div>
 
-    <!-- INFO -->
-    <div class="theory-box">
-        <h3>Záverečné zhrnutie</h3>
+ <!-- VYMAŽ CELÝ STARÝ ZÁVER -->
+<!-- a NAHRAD ho týmto -->
 
-        <p>
-            Albert Einstein nebol iba vedec.
-            Bol symbolom odvahy myslieť inak,
-            klásť si otázky a hľadať pravdu.
-        </p>
+<section id="zaver" class="final-section">
 
-        <p>
-            Jeho objavy ovplyvnili modernú fyziku,
-            technológie, vesmírny výskum aj samotné chápanie reality.
-        </p>
+    <div class="final-container">
 
-        <h3>Zdroje</h3>
+        <div class="final-header">
+            <span class="section-badge">Záver</span>
+            <h2>Záverečné zhrnutie</h2>
 
-        <p style="line-height:2;">
-            • Encyclopaedia Britannica<br>
-            • NobelPrize.org<br>
-            • NASA Science Archives<br>
-            • Einstein Archives Online<br>
-            • ETH Zürich Historical Records<br>
-            • Wikipedia Commons<br>
-            • školské fyzikálne materiály
-        </p>
+            <p>
+                Albert Einstein nebol iba vedec.
+                Bol symbolom odvahy myslieť inak,
+                klásť si otázky a hľadať pravdu.
+            </p>
 
-        <h3>Autor webstránky</h3>
+            <p>
+                Jeho objavy ovplyvnili modernú fyziku,
+                technológie, vesmírny výskum aj samotné chápanie reality.
+            </p>
+        </div>
 
-        <p style="line-height:2;">
-            <strong>Samuel Jacko</strong><br>
-            Gymnázium a Obchodná akadémia<br>
-            Komenského 32, Trebišov
-        </p>
+        <div class="final-grid">
+
+            <div class="final-card">
+                <h3>Zdroje</h3>
+
+                <ul class="final-list">
+                    <li>Encyclopaedia Britannica</li>
+                    <li>NobelPrize.org</li>
+                    <li>NASA Science Archives</li>
+                    <li>Einstein Archives Online</li>
+                    <li>ETH Zürich Historical Records</li>
+                    <li>Wikipedia Commons</li>
+                    <li>Školské fyzikálne materiály</li>
+                </ul>
+            </div>
+
+            <div class="final-card">
+                <h3>Autor webstránky</h3>
+
+                <div class="author-box">
+                    <h4>Samuel Jacko</h4>
+                    <p>Gymnázium a Obchodná akadémia</p>
+                    <p>Komenského 32, Trebišov</p>
+                </div>
+
+                <div class="final-note">
+                    Táto webstránka bola vytvorená ako školský projekt
+                    zameraný na život, vedeckú kariéru a odkaz
+                    Alberta Einsteina.
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
 
 </section>
 
