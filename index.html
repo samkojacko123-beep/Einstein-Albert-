@@ -3410,7 +3410,16 @@ section {
     overflow: hidden;
 }
 
-section:not(#domov)::before
+/* ===================================== */
+/* FINÁLNY PRECHOD MEDZI SEKCIAMI */
+/* ===================================== */
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section:not(#domov)::before {
     content: "";
     position: absolute;
     top: 0;
@@ -3434,7 +3443,7 @@ section:not(#domov)::before
     );
 }
 
-section:not(#domov)::before
+section:not(#domov)::after {
     content: "";
     position: absolute;
     top: 6px;
@@ -5032,6 +5041,7 @@ rightBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+}
 const careerSlider = document.querySelector('.career-slider');
 const careerLeft = document.querySelector('.career-left');
 const careerRight = document.querySelector('.career-right');
