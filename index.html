@@ -3354,6 +3354,198 @@ section::after {
         padding-bottom: 100px;
     }
 }
+/* =========================
+   SEKČIE – lepší dizajn + hrubšie prechody
+========================= */
+
+section {
+  position: relative;
+  padding: 120px 0;
+  background:
+    radial-gradient(circle at top left, rgba(120,170,255,0.10), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(170,120,255,0.08), transparent 40%),
+    linear-gradient(135deg, #f8fbff 0%, #eef4ff 50%, #f7f9fc 100%);
+  overflow: hidden;
+}
+
+/* hrubší spodný pás medzi sekciami */
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* hrubší pás */
+  background: linear-gradient(
+    90deg,
+    #7aa7ff 0%,
+    #5b8cff 30%,
+    #4aa3ff 60%,
+    #9b6dff 100%
+  );
+  box-shadow:
+    0 0 20px rgba(91, 140, 255, 0.25),
+    0 0 40px rgba(155, 109, 255, 0.12);
+  z-index: 2;
+}
+
+/* jemná horná línia */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.7);
+  z-index: 1;
+}
+
+
+/* =========================
+   6 BOXOV – lepší layout
+========================= */
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+  margin-top: 60px;
+}
+
+.topic-card {
+  position: relative;
+  min-height: 170px;
+  border-radius: 28px;
+  padding: 38px 30px;
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1.5px solid rgba(255,255,255,0.9);
+
+  box-shadow:
+    0 20px 60px rgba(85, 120, 200, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.35s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 70px rgba(85, 120, 200, 0.14),
+    0 0 0 1px rgba(120,170,255,0.18);
+}
+
+.topic-card .number {
+  font-size: 58px;
+  font-weight: 300;
+  color: #10182f;
+  line-height: 1;
+  margin-bottom: 18px;
+  letter-spacing: -2px;
+}
+
+.topic-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   TIMELINE KARTY
+========================= */
+
+.timeline-card {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(14px);
+  border-radius: 28px;
+  padding: 34px;
+  border: 1.5px solid rgba(130,170,255,0.22);
+
+  box-shadow:
+    0 18px 50px rgba(70, 110, 180, 0.08);
+
+  transition: all 0.35s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 28px 70px rgba(70, 110, 180, 0.14);
+}
+
+.timeline-year {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  height: 42px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #3b82f6,
+    #38bdf8
+  );
+
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+
+  box-shadow:
+    0 10px 25px rgba(59,130,246,0.22);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .topic-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 90px 0;
+  }
+
+  .topic-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .topic-card {
+    min-height: 150px;
+    padding: 30px 24px;
+  }
+
+  .topic-card .number {
+    font-size: 46px;
+  }
+
+  .topic-card h3 {
+    font-size: 18px;
+  }
+
+  section::after {
+    height: 6px;
+  }
+}
 </style>
 </head>
 <body>
