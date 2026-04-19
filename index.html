@@ -1391,22 +1391,6 @@ section{
     position:relative;
 }
 
-.examples-section::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:2px;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(37,99,235,.35),
-        rgba(56,189,248,.7),
-        rgba(37,99,235,.35),
-        transparent
-    );
-}
 
 .examples-header{
     text-align:center;
@@ -1624,18 +1608,7 @@ section{
     padding-top:40px;
 }
 
-.examples-section::after{
-    content:"";
-    position:absolute;
-    top:40px;
-    left:50%;
-    width:180px;
-    height:180px;
-    transform:translateX(-50%);
-    border-radius:50%;
-    border:2px dashed rgba(37,99,235,.12);
-    animation:spinGear 22s linear infinite;
-}
+
 
 /* more premium cards */
 .example-card{
@@ -1913,8 +1886,7 @@ transform: none;
     overflow: hidden;
     z-index: 2;
 
-    margin-top: -40px;
-    margin-bottom: -40px;
+
 
     background:
         radial-gradient(circle at 20% 40%, rgba(59,130,246,.12), transparent 30%),
@@ -3001,17 +2973,7 @@ transform: none;
         font-size: 1.2rem;
     }
 }
-/* ===== FIX DOUBLE SCROLL ===== */
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: auto;
-}
 
 /* hlavný wrapper */
 main,
@@ -3031,26 +2993,193 @@ main,
     height: auto;
     min-height: unset;
 }
-/* ===== FINAL SCROLL FIX ===== */
+/* ===================================================== */
+/* =============== FINAL SCROLL FULL FIX =============== */
+/* ===================================================== */
 
+/* iba jeden hlavný scroll */
+html,
 body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100%;
     position: relative;
 }
 
+/* všetky hlavné wrappre nesmú vytvárať vlastný scroll */
+main,
+section,
+footer,
+div,
+.wrapper,
+.container,
+.site-wrapper,
+.page-wrapper {
+    max-width: 100%;
+    min-height: auto !important;
+    height: auto !important;
+    overflow-x: visible;
+}
+
+/* horizontálne scroll sekcie */
 .timeline-wrapper,
 .career-slider {
+    overflow-x: auto !important;
     overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 
-section,
-div,
-main,
-footer {
-    max-width: 100%;
+.timeline-wrapper::-webkit-scrollbar,
+.career-slider::-webkit-scrollbar {
+    display: none;
 }
 
+/* footer nesmie nič prekrývať */
+.premium-footer {
+    position: relative !important;
+    z-index: 2;
+    margin: 0 !important;
+    padding-top: 80px;
+    overflow: visible !important;
+    min-height: auto !important;
+}
+
+/* odstránenie problémových negatívnych marginov */
+.universal-divider,
+.awards-divider,
+.career-transition,
+.premium-divider {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+}
+
+/* sekcia pred footerom musí mať priestor */
+#zaver,
+.pdf-export-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 80px !important;
+    position: relative;
+    z-index: 3;
+}
+
+/* nič sa nesmie renderovať pod footer */
+body > * {
+    position: relative;
+}
+
+/* fix scroll-top button */
+.scroll-top-btn {
+    z-index: 9999;
+}
+
+/* bezpečnostný fix */
 * {
     box-sizing: border-box;
+}
+/* ===================================================== */
+/* ===== FULL WIDTH DIVIDER FIX — FOTO JAV / PRÍKLADY == */
+/* ===================================================== */
+
+#priklady.examples-section {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-top: 120px;
+    overflow: visible;
+}
+
+/* horná deliaca premium čiara cez CELÚ stránku */
+#priklady.examples-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100vw;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(37,99,235,.35),
+        rgba(56,189,248,.8),
+        rgba(37,99,235,.35),
+        transparent
+    );
+
+    z-index: 5;
+}
+
+/* kruh v strede */
+#priklady.examples-section::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px dashed rgba(37,99,235,.12);
+
+    animation: spinGear 22s linear infinite;
+    z-index: 2;
+}
+
+/* parent box nesmie obmedzovať divider */
+.photoelectric-section {
+    overflow: visible !important;
+}
+@media print {
+
+    body {
+        background: white !important;
+        overflow: visible !important;
+    }
+
+    .nav,
+    .scroll-top-btn,
+    .timeline-btn,
+    .career-btn,
+    .memory-controls,
+    .pdf-btn,
+    .particles,
+    .glow1,
+    .glow2,
+    .glow3 {
+        display: none !important;
+    }
+
+    * {
+        animation: none !important;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    section,
+    .theory-box,
+    .example-card,
+    .award-card,
+    .footer-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
 }
 </style>
 </head>
@@ -5330,73 +5459,9 @@ function showHint(){
 
 restartMemoryGame();
 function downloadPDF() {
-    const element = document.body;
-
-    // dočasne skryj prvky ktoré kazia PDF
-    const hiddenElements = document.querySelectorAll(
-        ".scroll-top-btn, .timeline-btn, .career-left, .career-right, .memory-btn"
-    );
-
-    hiddenElements.forEach(el => {
-        el.dataset.oldDisplay = el.style.display;
-        el.style.display = "none";
-    });
-
-    // oprav šírku celej stránky pred exportom
-    document.body.style.width = "1400px";
-    document.body.style.background = "#ffffff";
-
-    const opt = {
-        margin: [10, 10, 10, 10],
-        filename: "Albert_Einstein_Project.pdf",
-        image: {
-            type: "jpeg",
-            quality: 1
-        },
-        html2canvas: {
-            scale: 3,
-            useCORS: true,
-            logging: false,
-            scrollY: 0,
-            windowWidth: document.body.scrollWidth
-        },
-        jsPDF: {
-            unit: "mm",
-            format: "a4",
-            orientation: "portrait"
-        },
-        pagebreak: {
-            mode: ["avoid-all", "css", "legacy"]
-        }
-    };
-
-    html2pdf()
-        .set(opt)
-        .from(element)
-        .save()
-        .then(() => {
-            // vrátenie pôvodného stavu
-            hiddenElements.forEach(el => {
-                el.style.display = el.dataset.oldDisplay || "";
-            });
-
-            document.body.style.width = "";
-            document.body.style.background = "";
-        })
-        .catch(err => {
-            console.error("PDF chyba:", err);
-
-            hiddenElements.forEach(el => {
-                el.style.display = el.dataset.oldDisplay || "";
-            });
-
-            document.body.style.width = "";
-            document.body.style.background = "";
-
-            alert("PDF sa nepodarilo vytvoriť.");
-        });
+    window.print();
 }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 </body>
 </html>
